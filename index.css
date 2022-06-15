@@ -1,162 +1,162 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
-body{
-    background-color: #141414;
-    color: white;
+body {
+  background-color: #141414;
+  color: white;
 }
 
-body{
-    font-family:  Montserrat, sans-serif;
+body {
+  font-family: Montserrat, sans-serif;
 }
 
 /* carousel section -------------- */
-#car_img{
-    height: auto;
-    width: 100%;
+#car_img {
+  height: auto;
+  width: 100%;
 }
 
-#prev, #next{
-    position: absolute;
-    top: 35%;
-    width: 40px;
-    text-align: center;
-    background-color: transparent;
-    border: none;
-    opacity: 0.4;
-    box-sizing: border-box;
-    cursor: pointer;
+#prev,
+#next {
+  position: absolute;
+  top: 35%;
+  width: 40px;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  opacity: 0.4;
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
-#prev{
-    left: 0px;
+#prev {
+  left: 0px;
 }
 
-#next{
-    right: 20px;
+#next {
+  right: 20px;
 }
 
-#carousel span{
-    line-height: 30px;
-    font-size: 100px;
-    position: relative;
-    color: #ff0000;
-    background-color: transparent;
+#carousel span {
+  line-height: 30px;
+  font-size: 100px;
+  position: relative;
+  color: #ff0000;
+  background-color: transparent;
 }
 
 /* carousel section ------------------- */
 
 /* first-product container section ------------- */
 
-body>section:nth-child(2){
-    width: 100%;
-    margin: auto;
+body > section:nth-child(2) {
+  width: 100%;
+  margin: auto;
 }
 
-.container{
-    width: 90%;
-    margin: auto;
+.container {
+  width: 90%;
+  margin: auto;
 }
 
-.container > h3{
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 33px;
-    text-align: center;
-    margin: 40px auto;
+.container > h3 {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 33px;
+  text-align: center;
+  margin: 40px auto;
 }
 
-.cards{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 20px;
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
-.card{
-    position: relative;
-    background: #e3e3e3;
-    border-radius: 10px;
+.card {
+  position: relative;
+  background: #e3e3e3;
+  border-radius: 10px;
 }
-.card > img{
-    max-width: 100%;
-    background: transparent;
-    padding: 0 30px;
-    box-sizing: border-box;
-}
-
-.saving{
-    background-color: #fff;
-    color: #ff0000;
-    position: absolute;
-    max-width: fit-content;
-    font-size: 12px;
-    line-height: 18px;
-    font-weight: 600;
-    padding: 4px;
-    top: 10px;
-    
+.card > img {
+  max-width: 100%;
+  background: transparent;
+  padding: 0 30px;
+  box-sizing: border-box;
 }
 
-.card > div{
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    text-align: left;
-    margin: 0 auto 2%;
-    max-width: 96%;
-    border-radius: 10px;
-
-    padding: 5px 12px 10px;
-    background: #fff;
-    color: #000;
-}
-.card > div > h4{
-    text-overflow: ellipsis;
-    line-height: normal;
-    font-weight: 700;
-    margin-top: 4px;
+.saving {
+  background-color: #fff;
+  color: #ff0000;
+  position: absolute;
+  max-width: fit-content;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 600;
+  padding: 4px;
+  top: 10px;
 }
 
-.card > div > i{
-    display: block;
-    min-height: 26px;
-    margin-bottom: 8px;
-    line-height: 15px;
-    font-size: 11px;
-    color: #ff0000;
-    border-bottom: 1px solid #c4c4c480;
+.card > div {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  text-align: left;
+  margin: 0 auto 2%;
+  max-width: 96%;
+  border-radius: 10px;
+
+  padding: 5px 12px 10px;
+  background: #fff;
+  color: #000;
 }
-.card > div > i > span{
-    font-family: Montserrat;
-    color:#000;
-    font-weight: 400;
+.card > div > h4 {
+  text-overflow: ellipsis;
+  line-height: normal;
+  font-weight: 700;
+  margin-top: 4px;
 }
 
-.card > div > h5{
-    color: #ff0000;
+.card > div > i {
+  display: block;
+  min-height: 26px;
+  margin-bottom: 8px;
+  line-height: 15px;
+  font-size: 11px;
+  color: #ff0000;
+  border-bottom: 1px solid #c4c4c480;
+}
+.card > div > i > span {
+  font-family: Montserrat;
+  color: #000;
+  font-weight: 400;
 }
 
-.card > div > h5 > strike{
-    color: #000;
-    font-weight: 400;
+.card > div > h5 {
+  color: #ff0000;
 }
 
-.card > div > p{
-    font-size: 12px;
-    margin-top:  0.5rem;
+.card > div > h5 > strike {
+  color: #000;
+  font-weight: 400;
 }
 
-.card > div > button{
-    margin-top: 12px;
-    width: 100%;
-    background-color: #ff0000;
-    border: 1px solid #ff0000;
-    padding: 8px 12px;
-    text-align: center;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 700;
+.card > div > p {
+  font-size: 12px;
+  margin-top: 0.5rem;
+}
+
+.card > div > button {
+  margin-top: 12px;
+  width: 100%;
+  background-color: #ff0000;
+  border: 1px solid #ff0000;
+  padding: 8px 12px;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
 }

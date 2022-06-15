@@ -339,50 +339,52 @@ Trending_Headphones_productObj.forEach(function (elem) {
     `;
 });
 
-
-
 // gaming_productObj===============================
 
 gaming_productObj = [
-    {
-        name : "boAt Immortal 700",
-        rating : 4.9,
-        reviews : 78,
-        price : 2499,
-        mrp : 6990,
-        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_65ff249b-c4f8-4dad-ae88-2aae76723ce2_600x.png?v=1643477993" 
-    },
+  {
+    name: "boAt Immortal 700",
+    rating: 4.9,
+    reviews: 78,
+    price: 2499,
+    mrp: 6990,
+    image:
+      "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_65ff249b-c4f8-4dad-ae88-2aae76723ce2_600x.png?v=1643477993",
+  },
 
-    {
-        name : "boAt Immortal 1000D",
-        rating : 4.9,
-        reviews : 12,
-        price : 2299,
-        mrp : 5990,
-        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/2_f3aa2756-01f3-4e39-80bc-7b4f6551c7aa_600x.png?v=1625748159" 
-    },
+  {
+    name: "boAt Immortal 1000D",
+    rating: 4.9,
+    reviews: 12,
+    price: 2299,
+    mrp: 5990,
+    image:
+      "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/2_f3aa2756-01f3-4e39-80bc-7b4f6551c7aa_600x.png?v=1625748159",
+  },
 
-    {
-        name : "boAt Immortal 1300",
-        rating : 4.8,
-        reviews : 8,
-        price : 2899,
-        mrp : 9990,
-        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/IM1300_main_2_600x.png?v=1632715015" 
-    },
+  {
+    name: "boAt Immortal 1300",
+    rating: 4.8,
+    reviews: 8,
+    price: 2899,
+    mrp: 9990,
+    image:
+      "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/IM1300_main_2_600x.png?v=1632715015",
+  },
 
-    {
-        name : "boAt Immortal 400",
-        rating : 4.5,
-        reviews : 2,
-        price : 1999,
-        mrp : 6990,
-        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main2-700_600x.png?v=1643632679" 
-    }
-]
+  {
+    name: "boAt Immortal 400",
+    rating: 4.5,
+    reviews: 2,
+    price: 1999,
+    mrp: 6990,
+    image:
+      "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main2-700_600x.png?v=1643632679",
+  },
+];
 
-gaming_productObj.forEach(function(elem){
-    let saving = ((elem.mrp - elem.price) / elem.mrp) * 100;
+gaming_productObj.forEach(function (elem) {
+  let saving = ((elem.mrp - elem.price) / elem.mrp) * 100;
   saving = saving.toFixed(0);
 
   document.querySelector("#gaming > .cards").innerHTML += `
@@ -403,4 +405,4 @@ gaming_productObj.forEach(function(elem){
     </div>
     </div>
     `;
-})
+});
