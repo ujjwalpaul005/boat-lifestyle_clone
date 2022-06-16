@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #navbar {
+            /* border: 1px solid red; */
+            width: 100%;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            background-color: black;
+            position: sticky;
+            top: 0px;
+            align-items: center;
+        }
+
+        #navbar>div:nth-child(1) {
+            /* border: 1px solid blue; */
+            width: 10%;
+            display: flex;
+        }
+
+        #navbar>div:nth-child(1)>img {
+            width: 90px;
+            margin-left: 50px;
+        }
+
+
+        #navbar>div:nth-child(2) {
+            /* border: 1px solid orange; */
+            width: 40%;
+            display: flex;
+            justify-content: space-around;
+
+
+        }
+
+        #navbar>div:nth-child(2)>h3 {
+            color: white;
+            background-color: black;
+            margin: auto;
+
+        }
+
+        #navbar>div:nth-child(2)>select {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border-width: 0px;
+            font-size: 18px;
+            /* font-weight: bold; */
+
+        }
+        #navbar>div:nth-child(2)>select:hover{
+            cursor: pointer;
+            -webkit-box-shadow: 0 9px 15px 0px red;    
+            box-shadow: 0 9px 15px 0px red;
+            padding: 15px;
+        }
+        #navbar>div:nth-child(2)>h3:hover{
+            cursor: pointer;
+            -webkit-box-shadow: 0 9px 15px 0px red;    
+            box-shadow: 0 9px 15px 0px red;
+            padding: 15px;
+        }
+
+       
+
+        #navbar>div:nth-child(3) {
+            /* border: 1px solid red;  */
+            width: 30%;
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        /*         
+        #navbar>div:nth-child(3)>p{
+            color: white;
+            text-align: center;
+            margin: auto;
+        } */
+        #navbar>div:nth-child(3)>img {
+            width: 22px;
+            padding: 20px;
+
+        }
+
+        #navbar>div:nth-child(3)>input {
+            /* border: 1px solid blue; */
+            width: 70%;
+            /* display: block; */
+            margin: auto;
+            height: 40px;
+            border-radius: 30px;
+            font-size: 17px;
+
+
+        }
+
+       
+
+        #searchImg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            height: 30px;
+            width: 220px;
+            border-radius: 20px;
+            margin-top: 15px;
+
+
+
+
+        }
+
+        #searchImg>img {
+            width: 20px;
+
+        }
+
+        #searchImg>input {
+            border: transparent;
+            font-size: 15px;
+        }
+        #Shop,#More{
+            border-radius: 15px;
+        }
+
+
+    /* **shop* */
+
+
+       
+
+        #shop {
+            /* border: 1px solid blue; */
+            width: 100%;
+            background-color: black;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: 20px;
+
+        }
+
+        #shop2 {
+            width: 100%;
+            background-color: black;
+            /* border: 1px solid red; */
+        }
+
+        #shop2>div {
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            margin-inline: auto;
+        }
+
+        #shop>img,
+        #shop2>div>img {
+            width: 322px;
+        }
+
+        #mainShop{
+            width: 100%;
+            position: absolute;
+        }
+        #mouseover{
+            color: white;
+            margin: auto;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 15px;
+            
+        }
+        #mouseover:hover {
+            /* background-color: red; */
+            
+            -webkit-box-shadow: 0 9px 15px 0px red;    
+            box-shadow: 0 9px 15px 0px red;
+            padding: 15px;
+        }
+
+
+
+        #showLogIn{
+            height: 70px;
+            width: 200px;
+            position: absolute;
+            background-color: black;
+            top: 80px;
+            right: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 10px;
+        }
+
+        #showLogIn>div{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            background-color: black;
+        }
+
+        #showLogIn>button{
+            margin-top: 10px;
+            height: 35px;
+            width: 98%;
+            font-size: 18px;
+            background-color: red;
+            color: white;
+        }
+
+        #showLogIn>div>h3{
+            color: red;
+        }
+
+        #showLogIn>div>button{
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            font-size: 16px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="navbar">
+        <div>
+            <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Boat-Logo_200x_200x_f9c79bf9-9c9a-477d-ab6a-7c889a1f2f70_170x.png?v=1646731229"
+                alt="error"> 
+        </div>
+
+        <div>
+             <h3 id="mouseover">Shop</h3>
+            
+
+            <h3>Offer Zone</h3>
+
+            <select name="More" id="More"> 
+
+                <option value="Daily Deal">Daily Deal</option> 
+                <option value="Do What Floats Your boAt">Do What Floats Your boAt</option> 
+                <option value="Meet The BoarHead">Meet The BoarHead</option>
+
+            </select>
+
+        </div>
+
+        <div>
+            <div id="searchImg">
+                <img src="https://t3.ftcdn.net/jpg/04/96/24/10/240_F_496241057_SduwgOUjIi2s3nQBXe6vcKFZ0OjsPXFz.jpg" 
+                    alt="error">
+                <input type="text" id="search" placeholder="Search....">
+            </div>
+
+            <img onclick="showLogin()" src=https://cdn-icons-png.flaticon.com/128/1177/1177568.png alt="error">
+             
+            
+
+            <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/gift.png?v=1606314809" alt="error"> 
+            <img src="https://cdn-icons-gif.flaticon.com/6172/6172531.gif" alt="error">
+
+        </div>
+
+    </div>
+
+    <div id="mainShop">
+
+      
+
+    </div>
+    
+
+    
+
+   
+
+
+
+  
+</body>
+
+</html>
+<script>
+     let option = document.querySelector("#mouseover");
+    option.addEventListener("mouseover",showShop)
+    option.addEventListener("mouseout",stopShowShop);
+
+    function stopShowShop(){
+        document.querySelector("#shop").remove();
+        document.querySelector("#shop2").remove();
+    }
+
+
+    function showShop() {
+        let shop = document.createElement("div")
+        shop.setAttribute("id", "shop");
+
+        let img1 = document.createElement("img");
+        img1.src = "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/dropdown-TWS_540x.png?v=1612338251";
+
+        let img2 = document.createElement("img");
+        img2.src = "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/Rectangle271_540x.png?v=1612338387";
+
+        let img3 = document.createElement("img");
+        img3.src = "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/dropdown-TWS_540x.png?v=1612338251";
+
+        let img4 = document.createElement("img");
+        img4.src = "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/latest_background_b4f773ca-05d9-41cc-a7cf-3104993ae895_540x.png?v=1612338356";
+
+        let img5 = document.createElement("img");
+        img5.src = "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/box-5_540x.png?v=1612338436";
+
+        let img6 = document.createElement("img");
+        img6.src = "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/Collections_5baef8f1-a67a-40a5-a537-4258c6caae6a_540x.png?v=1622452897";
+
+        let img7 = document.createElement("img");
+        img7.src = "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/bence-boros-253214-unsplash_720x.jpg?v=1648545875";
+
+        let img8 = document.createElement("img");
+        img8.src = "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/New-Category-Banners_with-Trebal_09_720x.png?v=1615033153";
+
+
+
+        let shop2 = document.createElement("div");
+        shop2.setAttribute("id", "shop2");
+
+        let div = document.createElement("div");
+
+        let image1 = document.createElement("img");
+        image1.src = "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/dropdown-limited-edition_540x.png?v=1612338560";
+
+        let image2 = document.createElement("img");
+        image2.src = "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/MISFIT-shop_720x.png?v=1624859990";
+
+        let image3 = document.createElement("img");
+        image3.src = "https://cdn.shopify.com/s/files/1/0057/8938/4802/collections/Immortal_category_Image_720x.png?v=1626094103";
+
+
+        shop.append(img1, img2, img3, img4, img5, img6, img7, img8)
+        shop2.append(div);
+        div.append(image1, image2, image3);
+        document.querySelector("#mainShop").append(shop, shop2);
+    }
+
+    function showLogin() {
+        let box = document.createElement("div")
+        box.setAttribute("id","showLogIn")
+        let headline = document.createElement("div")
+        let boatHead = document.createElement("h3")
+        boatHead.innerText = "Hey boAthead!"
+
+        let button = document.createElement("button")
+        button.innerText = "X"
+        button.addEventListener("click",deleteOption);
+
+        let loginbtn = document.createElement("button")
+        loginbtn.innerText = "Log in"
+        loginbtn.addEventListener("click",function(){
+            window.location.href="login.html";
+        })
+
+        headline.append(boatHead, button)
+        box.append(headline, loginbtn)
+        document.querySelector("body").append(box)
+
+
+    }
+
+    function deleteOption(){
+        document.querySelector("#showLogIn").remove();
+    }
+        
+
+    
+
+</script>
+   
+
+</script>
