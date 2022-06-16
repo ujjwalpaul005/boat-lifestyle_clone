@@ -27,11 +27,10 @@
       span {
         background-color: transparent;
       }
-      a {
+      a {  
         box-sizing: border-box;
         background-color: transparent;
         color: rgb(252, 196, 196);
-
         text-decoration: none;
       }
       a:hover {
@@ -13266,7 +13265,11 @@
 
       div2.append(p1, p2, hr, p3, p4, p5, button);
       div1.append(p0, image, div2);
-
+      div1.addEventListener("click", function (){
+        goToItemPage(element)
+      });
+     
+   
       document.querySelector("#productsGrid").append(div1);
     });
   }
@@ -13278,4 +13281,12 @@
   //   }
 
   // localStorage.clear()
+  function goToItemPage(x){
+  localStorage.setItem("item", JSON.stringify(x))
+        //  window.location.href="item_page.html"
+        
+        //  console.log("akash")
+}
+// localStorage.clear()
+  
 </script>
