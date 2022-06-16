@@ -8,10 +8,15 @@ body {
 }
 
 body {
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* carousel section -------------- */
+
+#carousel{
+  position: relative;
+}
+
 #car_img {
   height: auto;
   width: 100%;
@@ -20,8 +25,8 @@ body {
 #prev,
 #next {
   position: absolute;
-  top: 35%;
   width: 40px;
+  height: 100%;
   text-align: center;
   background-color: transparent;
   border: none;
@@ -38,13 +43,17 @@ body {
   right: 20px;
 }
 
-#carousel span {
-  line-height: 30px;
-  font-size: 100px;
+#carousel > button > span {
   position: relative;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 30px;
+  font-weight: 700;
+  font-size: 100px;
   color: #ff0000;
   background-color: transparent;
+  box-sizing: border-box;
 }
+
 
 /* carousel section ------------------- */
 
