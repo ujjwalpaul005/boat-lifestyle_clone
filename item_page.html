@@ -1,55 +1,798 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;900&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
     <style>
-        #nav{
-            width: 100%;
-            text-align: center;
-            height: 80px;
-            background-color: black;
-            color: aliceblue;
-        }
-        a{
-            text-decoration: none;
-            color: grey;
+      /* body {
+        /* width: 100%; */
+       /* }   */
+      * {
+        font-family: "Montserrat", sans-serif;
+      }
+      .container {
+        display: flex;
+        /* justify-content: space-around; */
+        background-color: rgb(245, 245, 245);
+      }
+      #nav {
+        /* position: fixed;
+            top: 0; */
+        width: 100%;
+        text-align: center;
+        height: 80px;
+        background-color: black;
+        color: aliceblue;
+      }
 
-        }
-        p{
-            padding: 20px;
-        }
-        #sideIcons{
-            margin-left: 10px ;
-        }
-        #sideIcons>div{
-            height: 70px;
-            width: 70px;
-            border: 1px solid black;
-            border-radius: 10px;
-            margin: 10px;
-        }
+      a {
+        text-decoration: none;
+        color: grey;
+      }
+
+      #nav + p {
+        padding: 20px;
+        padding-bottom: 30px;
+        /* margin-top: 100px; */
+        background-color: rgb(245, 245, 245);
+        margin: 0px;
+        font-size: small;
+      }
+      #sidePics {
+        margin-left: 40px;
+      }
+
+      #sidePics > div {
+        box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+          rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+        /* height: 70px; */
+        width: 60px;
+        display: flex;
+        padding: 2px;
+        /* border: 1px solid black; */
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+      #sidePics > div > img {
+        border-radius: 8px;
+        /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+      }
+      #image {
+        background-color: rgb(225, 225, 225);
+        height: 440px;
+        width: 440px;
+        /* border: 1px solid black; */
+        margin-left: 20px;
+      }
+
+      .containerRight {
+        display: flex;
+        flex-direction: column;
+        margin-left: 40px;
+        margin-right: 40px;
+        /* border: 1px solid black; */
+        height: 500px;
+        width: 55%;
+      }
+
+      /* product title css */
+
+      #productTitle {
+        height: 100px;
+        margin-bottom: 20px;
+        font-size: large;
+        /* border: 1px solid black; */
+      }
+      #category {
+        color: rgb(102, 102, 102);
+        font-weight: 500;
+        font-size: medium;
+        margin-top: 5px;
+      }
+      #productTitle > h1 {
+        margin: -5px;
+
+        font-weight: 700;
+      }
+     
+
+      /* rating and review section css */
+
+      #rating {
+        font-size: medium;
+        font-weight: 500;
+        margin-top: -8px;
+      }
+
+      #rightbottom {
+        display: flex;
+        /* border: 1px solid blue; */
+        justify-content: space-around;
+        /* align-items: center; */
+        margin-top: -30px;
+      }
+      /* pricebox section css */
+
+      #price {
+        display: flex;
+        margin: -10px 10px;
+        align-items: center;
+        /* justify-content: center; */
+      }
+      #price > p:first-child {
+        color: rgb(255, 52, 52);
+        font-size: 35px;
+        font-weight: 600;
+        margin-right: 20px;
+        margin-top: 25px;
+        margin-bottom: 0px;
+      }
+      #price > p:last-child {
+        font-size: 25px;
+        margin-bottom: 0px;
+        text-decoration: line-through;
+        color: rgb(88, 88, 88);
+        font-weight: 500;
+      }
+
+      #saving {
+        display: flex;
+        margin: -10px 10px;
+        font-size: smaller;
+        align-items: center;
+        justify-content: space-between;
+      }
+      #saving > p:first-child {
+        color: rgb(21, 198, 140);
+        font-weight: 600;
+        font-size: 14px;
+        /* margin-right: 15px; */
+      }
+      #stock {
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(220, 220, 220);
+        font-size: small;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        /* margin: 10px; */
+      }
+      #stock > div:first-child {
+        color: rgb(21, 198, 140);
+        font-weight: 800;
+        font-size: medium;
+        margin-left: 10px;
+      }
+      #stock > div:last-child {
+        color: red;
+        font-weight: 500;
+        margin-right: 10px;
+      }
+      #cartbox > button {
+        width: 95%;
+        margin: auto;
+        margin: 10px;
+        background-color: red;
+        padding: 10px;
+        border: 0px;
+        border-radius: 5px;
+        color: white;
+        font-weight: 700;
+        font-size: medium;
+      }
+      #cartbox {
+        border: 1px solid rgb(167, 166, 166);
+        border-radius: 10px;
+        width: 47%;
+        background-color: rgb(239, 239, 239);
+      }
+      #qtnRow,
+      #qtnRow > div {
+        display: flex;
+
+        align-items: center;
+        /* text-align: center; */
+      }
+      #qtnRow > div {
+        width: 30%;
+        height: 30%;
+        margin-left: 10px;
+        justify-content: space-between;
+        border: 2px solid rgb(220, 220, 220);
+        border-radius: 7px;
+      }
+      #qtnRow > div > h2 {
+        padding: 10px;
+        margin-top: -10px;
+        margin-bottom: -10px;
+        color: red;
+      }
+      #qtnRow > p {
+        margin-left: 10px;
+        font-weight: 500;
+      }
+      #qtnRow > div > button {
+        margin: 0%;
+        /* padding: 10px;; */
+        border: 0px;
+        font-size: x-large;
+        background-color: transparent;
+        /* border: 1px solid black; */
+        font-weight: 500;
+        width: 100%;
+      }
+      #colordiv{
+         /* border: 1px solid black; */
+        width: 50%;
+        margin-right: 20px;
+        /* display: flex; */
+        /* flex-direction: column; */
+        position: relative;
+        top: 0;
+      }
+      hr {
+        /* width: 350px; */
+        color: grey;
+        /* border-top: dotted 3px; */
+      }
+      #colordiv>p>span:first-child{
+       color: grey;
+       font-weight: 500;
+
+      }
+      #colordiv>p>span:last-child{
+       /* color: grey; */
+       font-weight: 500;
+
+      }
+      #colourbox {
+        display: grid;
+        grid-template-columns: repeat(4, 80px);
+        grid-template-rows: repeat(auto, 80px);
+        gap: 10px;
+        /* border: 1px solid red; */
+        width: 50%;
+        margin-right: 30px;
+        height: fit-content;
+        width: fit-content;
+      }
+      #colourbox > div {
+        /* border: 1px solid black; */
+        height: 80px;
+        border-radius: 5px;
+        background-color: rgb(225,225,225);
+      }
+      #colourbox > div > img {
+        width: 100%;
+      }
+      .zest{
+        font-size: 12px;
+        border: 1px dashed grey;
+        border-radius: 10px;
+       text-align: center;
+       margin-top: 20px;
+       background-color: rgb(225,225,225);
+
+      }
+      .zest>p{
+        margin: 5px;
+      }
+      .zest>hr{
+        border-top: dashed 1px ;
+        width: 90%;
+      }
+      #walnut{
+        width: 20%;
+      }
+      #shipping,
+      #shipping > div {
+        display: flex;
+        height: 60px;
+        /* border: 1px solid red; */
+        justify-content: space-around;
+        align-items: center;
+        font-weight: 600;
+      }
+      #shipping > div > img {
+        width: 20%;
+      }
+      #menu {
+        display: flex;
+        justify-content: center;
+        background-color: black;
+        color: white;
+      }
+      #menu > p {
+        margin: 0px 50px;
+        padding: 20px;
+        font-weight: 700;
+        color: rgb(177, 177, 177);
+      }
+      #menu > p:nth-child(1) {
+        color: red;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        text-decoration-thickness: 2px;
+      }
+      #description > img {
+        height: 100%;
+        margin-bottom: -37px;
+      }
+      #description + div {
+        background-color: black;
+        color: white;
+        text-align: center;
+      }
+      #descriptionhead {
+        line-height: 70px;
+        padding-top: 20px;
+        font-size: 50px;
+      }
+      #descriptionhead + p {
+        line-height: 25px;
+        margin: 0px 60px;
+        padding-bottom: 30px;
+        font-size: 15px;
+      }
     </style>
+  </head>
+  <body>
+    <div id="nav">NAVBAR</div>
 
-</head>
-<body>
-    <div id="nav">
-        NAVBAR
+    <p><a href="index.html">Home /</a><span> </span></p>
+    <div class="container">
+      <div id="sidePics">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div id="image">
+
+      </div>
+      <div class="containerRight">
+        <div id="Rightupper">
+          <div id="productTitle">
+            <h1>
+              <!-- product name -->
+            </h1>
+            <p id="category">
+              <!-- category  -->
+            </p>
+            <p id="rating">
+              <!-- rating -->
+            </p>
+          </div>
+          <div id="rightbottom">
+            <div id="colordiv">
+                <hr />
+               <p>
+                <span>Color:</span>
+                <span id="color">
+                    <!-- colour name of selected product will be displayed here. -->
+                </span>
+               </p> 
+                <div id="colourbox">
+                    <!-- same product with available colours will be appended here -->
+                    
+                  </div>
+                  <hr>
+                  <div class="zest">
+                    <p >
+                        3 interest-free EMIs of 30% with <img id="walnut" src="https://pl-widget.capitalfloat.com/assets/images/w369Light/w369Logo.svg" alt=""> <img src="https://pl-widget.capitalfloat.com/assets/images/w369Light/info.svg" alt="">
+                    </p  > 
+                    <hr>
+                    <p >Or 3 interest-free payments of 30% with <img src="https://assets.zestmoney.in/assets/widget/zest-logo-name-info.svg" alt=""> </p> 
+
+                  </div>
+                   
+
+
+                  
+            </div>
+            
+            <div id="cartbox">
+              <div id="price">
+                <!-- price -->
+                <p>
+                  <!-- current price will be appended here. -->
+                </p>
+                <p>
+                  <!-- original mrp should be appended here. -->
+                </p>
+              </div>
+
+              <div id="saving">
+                <!-- saving -->
+                <p>
+                  <!-- you save section -->
+                </p>
+                <p>Inclusive of all taxes</p>
+              </div>
+              <p>
+                <!-- instock -->
+              </p>
+              <div id="stock">
+                <div>In Stock</div>
+                <div>Currently in 64 carts</div>
+              </div>
+              <!-- quantity selector -->
+              <div id="qtnRow">
+                <div>
+                  <button id="btnminus">-</button>
+
+                  <h2 id="quantitySelected">1</h2>
+
+                  <button id="btnplus">+</button>
+                </div>
+                <p>Quantity</p>
+              </div>
+              <button>ADD TO CART</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <p><a href="index.html">Home /</a> boAt Rockerz 225</p>
-    <div id="sideIcons">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+
+    <div id="shipping">
+      <div>
+        <img
+          src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/icon-1b.png?v=1654855622"
+          alt=""
+        />
+        <p>1 Year Warranty</p>
+      </div>
+      <div>
+        <img
+          src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/icon-3b.png?v=1654855622"
+          alt=""
+        />
+        <p>7 Days Replacement</p>
+      </div>
+      <div>
+        <img
+          src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/icon-2b.png?v=1654855622"
+          alt=""
+        />
+        <p>Free Shipping</p>
+      </div>
+      <div>
+        <img
+          src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/icon-4b.png?v=1654855622"
+          alt=""
+        />
+        <p>Secure Checkout</p>
+      </div>
     </div>
-</body>
+    <div id="menu">
+      <p>DESCRIPTION</p>
+      <p>SPECIFICATIONS</p>
+      <p>REVIEWS</p>
+    </div>
+    <div id="description">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/AD131_W_TR_a847d39d-5759-4be7-afde-c350ed3142dd.png?v=1615815910"
+        alt=""
+      />
+    </div>
+    <div>
+      <h1 id="descriptionhead">
+        <!-- name of the product will vbe appended here. -->
+      </h1>
+      <p>
+        <!-- details will be appended here as per object of selected product. -->
+      </p>
+    </div>
+    <div id="design1">
+      <div>
+        <img alt="" />
+        <h2>Connected every moment</h2>
+        <p>
+          Never lose a second with seamless Bluetooth 5.0 and Insta’ Wake n
+          Pair, that connects your phone to your earbuds the moment they leave
+          the charging case. Charge your tws bluetooth earphones with Type C for
+          great speed.
+        </p>
+      </div>
+      <div>
+        <h2>boAt Signature Sound for music lovers</h2>
+        <p>
+          Where sound is everything. The most immersive music experience
+          equipped with 13mm drivers that will transport you to another world.
+        </p>
+        <img alt="" />
+      </div>
+    </div>
+    <div id="design2">
+      <div>
+        <img alt="" />
+      </div>
+      <div>
+        <h2>Featherweight for comfort all-day</h2>
+        <p>
+          Feel your music, never the weight of your earbuds. Wireless earbuds
+          designed for ease and flexibility.
+        </p>
+      </div>
+    </div>
+    <div id="design3">
+      <div>
+        <div></div>
+      </div>
+    </div>
+  </body>
 </html>
 <script>
-    let allProduct= JSON.parse(localStorage.getItem("allProduct")) ;
-    allProduct.forEach(element => {
-        
+  let productObj = [
+    {
+      name: "boAt Rockerz 330",
+      rating: 4.8,
+      reviews: 258,
+      price: 1499,
+      mrp: 2890,
+      color: "BlazingRed",
+      category: "Rockerz",
+      image:
+        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_15634ca0-9f81-4d11-b891-9a1496f709b1_600x.png?v=1641801688",
+
+      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/asap-n-playback-ocean_700x.jpg?v=1654924451",
+      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/drivers-red_700x.jpg?v=1654924446",
+      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/Dual-pairing-red_1500x.jpg?v=1654924448",
+      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/magnetic-eabuds-and-metallic-navy_700x.jpg?v=1655376287",
+      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/pi-1-t_4d4842cd-5f58-40da-839d-c15af7aa4c68.png?v=1621411179",
+      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/330-pi2.png?v=1621516343",
+      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/pi-3.png?v=1621416448",
+      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1001.png?v=1620883574",
+      img5: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/330-pi.png?v=1621574799",
+      description:
+        "Let's drench in music and experience every beat differently. Powered with boAt Signature Sound, Rockerz 330 is here to get you grooving to a thumping bass designed only for audiophiles! Keep your charging worries at bay; Rockerz 330 bluetooth earphones offer a dynamic playtime of 30 hours. That's not it! All is takes is 10 minutes of ASAP charge for 10 hours of playtime. This ergonomically designed neckband promises the best of comfort and style. IPX5 protects the Rockerz from sweat and water; so go ahead and make a run to freshen up your mind for these Rockerz don't let anything hold you back. Seamlessly pair two devices at the same time with the dual pairing Bluetooth v5.0. Type C Charging, Single Press Voice Assistant make your audio experience even more enthralling! It's time, LET'S SETTLE for nothing but the best! ",
+    },
+
+    {
+      name: "boAt Airdopes 131 - Wireless Earbuds",
+      rating: 4.8,
+      reviews: 932,
+      price: 999,
+      mrp: 2990,
+      color: "CrimsonCream",
+      category: "WIRELESS EARBUDS",
+      image:
+        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/cream_600x.png?v=1642405569",
+
+      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD131TypeC_46c15722-70e3-41fb-94ed-c01677d78546_700x.jpg?v=1655129703",
+      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD131IWP_341b3d39-0544-41da-a95c-ce45c6db85c4_700x.jpg?v=1655129703",
+      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD1314XCharge_a886f994-2e65-48a2-a0c8-dfabe6eebfeb_700x.jpg?v=1655129703https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD1314XCharge_a886f994-2e65-48a2-a0c8-dfabe6eebfeb_700x.jpg?v=1655129703",
+      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD131BV5.0_669ed751-5e7e-4381-9d86-93bc84fe7e6b_700x.jpg?v=1655129703",
+      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Banner1-Product1_51f1ee8d-1008-4121-8280-cb54b2e0c316.png?v=1622018200",
+      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Banner2-product2_2f6bbbb9-a887-481b-b597-72cd0f94821c.png?v=1622018201",
+      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Banner3-product2_7d453894-034a-41ee-a8b4-24ecccccb8e8.png?v=1622018201",
+      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Banner4-Model2_c4ed8bac-e9d5-4f9f-970b-52fce898c52e.png?v=1622018200",
+      img5: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Banner5-product1_6ef02625-b2a0-4671-aebc-414db2681077.png?v=1622018201",
+      description:
+        "Sleek. Comfortable. Stylish. And a Splash of Incredible Colours. Bring alive your favourite sounds with these true wireless earbuds. Equipped with 13mm drivers for the magical boAt signature sound. Designed for supreme ease with Insta Wake N’ Pair technology that auto connects the moment it’s out of the case and Type C Charging. Tws earbuds to drown all the sounds you don’t need and live every moment. With a battery capacity of 40mAh for each earbud, indulge in a blissful audio experience for up to 3 hours in a go. Tap into instant wireless functionality with optimum Bluetooth V5.0 ",
+    },
+    {
+      // <!-- 2 nd colorpod  -->
+      name: "boAt Airdopes 131 - Wireless Earbuds",
+      rating: 4.8,
+      reviews: 932,
+      price: 999,
+      mrp: 2990,
+      color: "ViperGreen",
+      category: "WIRELESS EARBUDS",
+      image:
+        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/viper-green_600x.png?v=1642405569",
+      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD131TypeC_49e1b080-25fd-4db2-a2a0-ca2125ccee73_700x.jpg?v=1655462913",
+      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/FeatureImagesAD131IWP_a1e662fd-302f-414f-bbeb-ccd799248a24_700x.jpg?v=1655462913",
+      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/FeatureImagesAD1314XCharge_226105ac-db75-4727-b475-1e70f97fd380_700x.jpg?v=1655462913",
+      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/FeatureImagesAD131BV5.0_7944d98d-0e8f-46ef-8c37-f015e82dcc7a_700x.jpg?v=1655462913",
+      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/cream_72x.png?v=1642405569",
+      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/viper-green_72x.png?v=1642405569",
+      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/c2386af9-4349-432f-8ba5-2b6aa06025c8_72x.png?v=1642405569",
+      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/32011675-2ad8-4b99-9787-895caf201d28_72x.png?v=1642405569",
+      img5: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/616b4ead-bbd9-4a16-aeab-8d331a16f697_72x.png?v=1642405569",
+      description:
+        "Sleek. Comfortable. Stylish. And a Splash of Incredible Colours. Bring alive your favourite sounds with these true wireless earbuds. Equipped with 13mm drivers for the magical boAt signature sound. Designed for supreme ease with Insta Wake N’ Pair technology that auto connects the moment it’s out of the case and Type C Charging. Tws earbuds to drown all the sounds you don’t need and live every moment. With a battery capacity of 40mAh for each earbud, indulge in a blissful audio experience for up to 3 hours in a go. Tap into instant wireless functionality with optimum Bluetooth V5.0 ",
+    },
+
+    {
+      // <!--3rd colorpod  -->
+      name: "boAt Airdopes 131 - Wireless Earbuds",
+      rating: 4.8,
+      reviews: 932,
+      price: 999,
+      mrp: 2990,
+      color: "Black",
+      category: "WIRELESS EARBUDS",
+      image:
+        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/c2386af9-4349-432f-8ba5-2b6aa06025c8_600x.png?v=1642405569",
+      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/c2386af9-4349-432f-8ba5-2b6aa06025c8_600x.png?v=1642405569",
+      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD131TypeC_f9ba03b9-5d27-4b6b-ac43-b79374479f0d_700x.jpg?v=1655454358",
+      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/FeatureImagesAD131IWP_6a858bf2-13f4-433a-a8d6-e32bc7239e78_700x.jpg?v=1655454358",
+      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/FeatureImagesAD1314XCharge_37dfa72f-a9e8-4190-a9c0-aa7fb2c57e4b_700x.jpg?v=1655454359",
+      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/cream_72x.png?v=1642405569",
+      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/viper-green_72x.png?v=1642405569",
+      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/c2386af9-4349-432f-8ba5-2b6aa06025c8_72x.png?v=1642405569",
+      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/32011675-2ad8-4b99-9787-895caf201d28_72x.png?v=1642405569",
+      img5: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/616b4ead-bbd9-4a16-aeab-8d331a16f697_72x.png?v=1642405569",
+      description:
+        "Sleek. Comfortable. Stylish. And a Splash of Incredible Colours. Bring alive your favourite sounds with these true wireless earbuds. Equipped with 13mm drivers for the magical boAt signature sound. Designed for supreme ease with Insta Wake N’ Pair technology that auto connects the moment it’s out of the case and Type C Charging. Tws earbuds to drown all the sounds you don’t need and live every moment. With a battery capacity of 40mAh for each earbud, indulge in a blissful audio experience for up to 3 hours in a go. Tap into instant wireless functionality with optimum Bluetooth V5.0",
+    },
+  ];
+  let obj = productObj[1];
+
+//   displayImages(obj);
+
+  //   console.log(obj);
+  
+ 
+  
+   
+    
+
+  function displayImages(x) {
+    let maindiv = document.querySelector("#image");
+   
+
+    let img = document.createElement("img");
+    maindiv.innerHTML="";
+       
+        img.style.width="100%";
+        maindiv.append(img)
+    img.setAttribute("src", x.image);
+    img.style.width = "100%";
+    maindiv.append(img);
+    let spic0 = document.querySelector("#sidePics>div:nth-child(1)");
+    let simg0 = document.createElement("img");
+  
+    simg0.setAttribute("src", x.image);
+    simg0.innerHTML="";
+    simg0.style.width = "100%";
+    spic0.innerHTML="";
+    spic0.append(simg0);
+    spic0.addEventListener("click", function () {
+      show(x.image);
     });
+
+    function show(elem) {
+        maindiv.innerHTML="";
+        let img = document.createElement("img");
+        img.style.width="100%";
+        maindiv.append(img)
+      img.setAttribute("src", elem);
+    }
+    let spic1 = document.querySelector("#sidePics>div:nth-child(2)");
+     let simg1 = document.createElement("img");
+     simg1.innerHTML="";
+    simg1.setAttribute("src", x.pic1);
+    simg1.style.width = "100%";
+    spic1.innerHTML="";
+    spic1.append(simg1);
+    spic1.addEventListener("click", function () {
+      show(x.pic1);
+    });
+
+    let spic2 = document.querySelector("#sidePics>div:nth-child(3)");
+    let simg2 = document.createElement("img");
+    simg2.innerHTML="";
+    simg2.setAttribute("src", x.pic2);
+    simg2.style.width = "100%";
+    spic2.innerHTML="";
+    spic2.append(simg2);
+    spic2.addEventListener("click", function () {
+      show(x.pic2);
+    });
+
+    let spic3 = document.querySelector("#sidePics>div:nth-child(4)");
+    let simg3 = document.createElement("img");
+    simg3.innerHTML="";
+    simg3.setAttribute("src", x.pic3);
+    simg3.style.width = "100%";
+    spic3.innerHTML="";
+    spic3.append(simg3);
+    spic3.addEventListener("click", function () {
+      show(x.pic3);
+    });
+
+    let spic4 = document.querySelector("#sidePics>div:nth-child(5)");
+    let simg4 = document.createElement("img");
+    simg4.innerHTML="";
+    simg4.setAttribute("src", x.pic4);
+    simg4.style.width = "100%";
+    spic4.innerHTML="";
+    spic4.append(simg4);
+    spic4.addEventListener("click", function () {
+      show(x.pic4);
+    });
+  }
+
+  //   product name category and reviews section
+
+  let title = document.querySelector("#productTitle>h1");
+  title.innerHTML = obj.name;
+  let topTitle = document.querySelector("span");
+  topTitle.innerHTML = obj.name;
+  let category = document.querySelector("#category");
+  category.innerHTML = obj.category;
+  let rating = document.querySelector("#rating");
+  rating.innerHTML = obj.rating + " | " + obj.reviews + "  reviews";
+
+  //   price and cartbox section
+  let price = document.querySelector("#price > p:first-child");
+  price.innerHTML = " ₹ " + obj.price;
+  let mrp = document.querySelector("#price > p:last-child");
+  mrp.innerHTML = " ₹ " + obj.mrp;
+
+  //  discount and savings
+  let savings = document.querySelector(" #saving > p:first-child");
+  savings.innerHTML =
+    "You Save: ₹ " +
+    eval(obj.mrp - obj.price) +
+    " (" +
+    Math.ceil(eval(((obj.mrp - obj.price) / obj.mrp) * 100)) +
+    "%) ";
+
+  //  quantity selector
+  let qtn = document.querySelector("#qtnRow>div>h2");
+  qtn = Number(qtn.innerText);
+  // console.log(typeof(qtn))
+  let btnm = document.querySelector("#btnminus");
+  btnm.addEventListener("click", function () {
+    if (qtn > 1) {
+      qtn--;
+      document.querySelector("#qtnRow>div>h2").innerText = qtn;
+    }
+  });
+  let btnp = document.querySelector("#btnplus");
+  btnp.addEventListener("click", function () {
+    if (qtn < 7) {
+      qtn++;
+      document.querySelector("#qtnRow>div>h2").innerText = qtn;
+      // console.log(qtn)
+    }
+  });
+
+  // product description section
+  let descriptionhead = document.querySelector("#descriptionhead");
+  descriptionhead.innerText = obj.name;
+  let description = document.querySelector("#descriptionhead+p");
+  description.innerText = obj.description;
+
+  // colors section
+  let selectedItemName = obj.name;
+  // let productObj= JSON.parse(localStorage.getItem("allProduct")) ;
+  let sameproduct = productObj.filter(function (elem) {
+    return elem.name == selectedItemName;
+  });
+  //   console.log(sameproduct);
+  sameproduct.forEach((element) => {
+    let div = document.createElement("div");
+    let img = document.createElement("img");
+    img.setAttribute("src", element.image);
+    div.append(img);
+    div.addEventListener("click", function () {
+        document.querySelector("#color").innerText=`${element.color}`
+      displayImages(element);
+      
+    });
+    div.addEventListener("load",  displayImages(obj));
+    document.querySelector("#color").addEventListener("load", onloadcolor());
+    function onloadcolor(){
+    document.querySelector("#color").innerText=`${obj.color}`
+    }
+    document.querySelector("#colourbox").append(div);
+ 
+
+  });
+
 </script>
