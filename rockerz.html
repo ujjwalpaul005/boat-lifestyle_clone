@@ -4,11 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;900&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
     <style>
       body,
       * {
         background-color: rgb(37, 37, 37);
+        font-family: "Montserrat", sans-serif;
       }
       #navbar {
         background-color: black;
@@ -21,13 +28,13 @@
         padding-top: 20px;
         padding-left: 30px;
         letter-spacing: 1px;
-        font-family: "Roboto Slab", serif;
+        font-family: "Montserrat", sans-serif;
         background-color: transparent;
       }
       span {
         background-color: transparent;
       }
-      a {  
+      a {
         box-sizing: border-box;
         background-color: transparent;
         color: rgb(252, 196, 196);
@@ -40,11 +47,16 @@
       #banner > img {
         width: 100%;
       }
+      hr {
+        width: 90%;
+        color: grey;
+      }
       h1 {
         box-sizing: border-box;
         color: white;
         padding-left: 30px;
-        font-size: 70px;
+        font-size: 50px;
+        
       }
 
       h1 + p {
@@ -69,23 +81,20 @@
         column-gap: 25px;
         justify-content: space-around;
         align-items: center;
+        margin: 0px 30px;
       }
       #productsGrid > div {
-        /* display: flex;
-        flex-direction: column;
-        /* justify-content: center; */
-        /* align-items: center; */
         box-sizing: border-box;
-        /* padding-left: 20px; */
         border-radius: 10px;
         margin: auto;
+        width: 100%;
       }
       #productsGrid > div > img {
         width: 100%;
+       
         margin: auto;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-        /* position:absolute ; */
       }
       #productsGrid > div > p {
         position: absolute;
@@ -95,14 +104,8 @@
 
       #productsGrid > div > div {
         background-color: white;
-        margin-top: -15px;
-        margin-left: 5%;
-        margin-right: 5%;
-        margin-bottom: 10px;
-        border-radius: 100px;
-        height: 90%;
-        position: sticky;
-        /* width: 100%; */
+        margin: auto;
+        width: 95%;
         border: 1px solid white;
       }
       #productsGrid > div > div > p,
@@ -120,7 +123,7 @@
         color: white;
         padding: 10px;
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 4px;
         font-weight: 700;
       }
     </style>
@@ -13215,7 +13218,7 @@
       let p0 = document.createElement("p");
       p0.innerText =
         "YOU SAVE " +
-        Math.floor(eval((element.price / element.strikeoff_price) * 100)) +
+        Math.floor(eval(((element.strikeoff_price-element.price) / element.strikeoff_price) * 100)) +
         " %";
       p0.style.padding = "5px";
       p0.style.color = "red";
@@ -13231,12 +13234,13 @@
       image.setAttribute("src", element.picture);
 
       let div2 = document.createElement("div");
-      div2.style.width = "90%";
+      
       div2.style.borderRadius = "10px";
 
       let p1 = document.createElement("p");
       p1.innerText = element.product_name;
       p1.style.backgroundColor = "white";
+      p1.style.fontWeight = "700";
 
       let p2 = document.createElement("p");
       p2.innerText = element.rating;
@@ -13257,19 +13261,25 @@
 
       let p5 = document.createElement("p");
       p5.innerText =
-        "You Save ₹" + eval(element.strikeoff_price - element.price);
+        "You Save ₹" +
+        eval(element.strikeoff_price - element.price) +
+        "  (" +
+        Math.floor(eval((element.price / element.strikeoff_price) * 100)) +
+        " %" +
+        ")";
       p5.style.backgroundColor = "white";
+      p5.style.fontSize = "13px";
 
       let button = document.createElement("button");
       button.innerText = " ADD TO CART";
 
+
       div2.append(p1, p2, hr, p3, p4, p5, button);
       div1.append(p0, image, div2);
-      div1.addEventListener("click", function (){
-        goToItemPage(element)
+      div1.addEventListener("click", function () {
+        goToItemPage(element);
       });
-     
-   
+
       document.querySelector("#productsGrid").append(div1);
     });
   }
@@ -13281,12 +13291,11 @@
   //   }
 
   // localStorage.clear()
-  function goToItemPage(x){
-  localStorage.setItem("item", JSON.stringify(x))
-        //  window.location.href="item_page.html"
-        
-        //  console.log("akash")
-}
-// localStorage.clear()
-  
+  function goToItemPage(x) {
+    localStorage.setItem("item", JSON.stringify(x));
+    //  window.location.href="item_page.html"
+    window.location.href="item_page.html"
+    //  console.log("akash")
+  }
+  // localStorage.clear()
 </script>
