@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+         *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background-color:#252525;
+        }
+
+        form{
+            width: 40%;
+            background-color:#252525;
+            margin:  10%  auto;
+            padding: 5%;
+        }
+
+        input,button{
+            width: 50%;
+            display: block;
+            margin-top: 10px;
+            margin: auto;
+            padding: 10px;
+          
+        }
+
+        #login{
+            width: 55%;
+            margin-top: 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            
+           
+        }
+        h1{
+          text-align: center;
+            color: white;
+            font-size: 40px;
+            margin-top: 10px;
+           
+        }
+        p{
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+            font-size: 20px;
+
+        }
+        #login2{
+            color: gray;
+        }
+        input{
+            margin-bottom: 10px;
+            border-radius: 7px;
+            
+        }
+        
+       
+        
+
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+    <p>Please enter your e-mail and password:</p>
+    <form>
+        <input type="text" placeholder="E-mail" id="email">
+        <input type="password" placeholder="password" id="password">
+        <button id="login">LOGIN</button>
+        <p id="login2">New customer? <a href="signup.html">Creat an Account</a></p>
+    </form>
+    
+</body>
+</html>
+<script>
+    let form=document.querySelector("form");
+    let userData=  JSON.parse(localStorage.getItem("userData")) || [];
+    form.addEventListener("submit",function(event){
+        event.preventDefault()
+        let data={
+            email:form.email.value,
+            password:form.password.value
+
+        }
+        if(checklogin(data.email,data.password)===true){
+            localStorage.setItem("login",JSON.stringify(data)) ;
+            alert("Login Successful")
+        }else{
+            alert("Wrong Usernane or Password")
+        }
+       
+    })
+
+    function checklogin(email,password){
+        let filtered=userData.filter(function(element){
+            return element.email===email && element.password===password ;
+        })
+        if(filtered.length>0){
+            return true;
+        }else{
+            return false ;
+        }
+
+    }
+</script>

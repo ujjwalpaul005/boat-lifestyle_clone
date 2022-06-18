@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background-color:#252525;
+        }
+
+        form{
+            width: 40%;
+            background-color:#252525;
+            margin:  10%  auto;
+            padding: 5%;
+        }
+
+        input,button{
+            width: 50%;
+            display: block;
+            margin-top: 10px;
+            margin: auto;
+            padding: 10px;
+        }
+
+        #signup{
+            width: 55%;
+            margin-top: 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            
+           
+        }
+        h1{
+          text-align: center;
+            color: white;
+            font-size: 40px;
+            margin-top: 10px;
+           
+        }
+        p{
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+            font-size: 20px;
+
+        }
+        #login{
+            color:gray;
+        }
+        input{
+            margin-bottom: 10px;
+            border-radius: 7px;
+            
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <h1>Register</h2>
+    <p>Please fill in the fields below:</p>
+    <div>
+        <form>
+            
+            <input id="firstname" placeholder="First Name" type="text" >
+            <input type="text"  id="lastname" placeholder="Last Name">
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <button id="signup">CREATE ACCOUNT</button>
+            <p id="login">Already Have An Account? <a href="login.html">Login</a></p> 
+           
+        </form>
+    </div>
+   
+</body>
+</html>
+<script>
+    let form=document.querySelector("form");
+    let userData= JSON.parse(localStorage.getItem("userData"))|| [] ; 
+    form.addEventListener("submit",function(event){
+        event.preventDefault() ;
+        let data={
+            fname:form.firstname.value,
+            lname:form.lastname.value,
+            email:form.email.value,
+            password:form.password.value 
+          
+        }
+        if(checkEmail(data.email)===true){
+            userData.push(data)
+            localStorage.setItem("userData",JSON.stringify(userData));
+            window.location.href="login.html"
+        }else{
+            alert("Account Already Exists")
+            window.location.href="login.html"
+        }
+       
+       
+
+    }) 
+    function checkEmail(email){
+        let filtered=userData.filter(function(elm){
+            return email===elm.email;
+        })
+        if(filtered.length>0){
+            return false
+        }else{
+            return true
+        }
+    }
+
+</script>
