@@ -1,5 +1,6 @@
 cartFunc()
 function cartFunc() {
+  console.log("done")
   let totalPrice = 0;
   let cartList = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -7,9 +8,15 @@ function cartFunc() {
     document.getElementById("cart_pdt").innerHTML = `
         <div class="empty">
             <p>Your cart is empty</p>
-            <button class="empty_btn" onclick="shopping">Start Shopping</button>
+            <button class="empty_btn" id="shopping">Start Shopping</button>
         </div>
         `;
+    
+    document.getElementById("shopping").addEventListener("click", function(){
+      window.location.href = "products.html"
+    });
+
+
   } else {
     let cart = document.getElementById("cart_pdt");
     cart.innerText = "";
@@ -87,8 +94,16 @@ function cartFunc() {
     localStorage.setItem("cart", JSON.stringify(cartList));
     cartFunc();
   }
+
+  
 }
 
+
+
+document.getElementById("cartOpen").addEventListener("click", function(){
+  cartFunc();
+  document.querySelector("#cart").style.display = "block";
+});
 
 document
   .querySelectorAll(".cards > div > div > button")
@@ -97,5 +112,8 @@ document
   });
 
 
-  document.querySelector("#addTocart_souvik").addEventListener("click",cartFunc);
+
+
+
+
 

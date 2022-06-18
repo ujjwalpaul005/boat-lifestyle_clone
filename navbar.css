@@ -16,7 +16,11 @@
     justify-content: flex-end;
 }
 
-#navbar>div:nth-child(1)>img {
+#navbar>div:nth-child(1)>a{
+    text-align: center;
+    text-decoration: none;
+}
+#navbar>div:nth-child(1)>a>img {
     width: 90px;
 }
 
@@ -162,6 +166,7 @@
     font-size: 18px;
     font-weight: bold;
     border: none;
+    cursor: pointer;
 
 }
 
@@ -223,6 +228,7 @@
     font-size: 16px;
     border: none;
     font-weight: bold;
+    cursor: pointer;
 
 }
 

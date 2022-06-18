@@ -46,6 +46,10 @@ function next() {
 
 
 // other small functions ====================
+function shopping(){
+  window.location.href = "products.html"
+}
+
 function readmore() {
   document.querySelector(".text").style.height = "auto";
   document.querySelector(".readmore").style.display = "none";
@@ -56,7 +60,7 @@ document.querySelector("#closeCart").addEventListener("click", function(){
 })
 
 document.querySelector("#content").addEventListener("click", function(){
-  window.location.href = "product.html"
+  window.location.href = "products.html"
 })
 
 function shopping(){
