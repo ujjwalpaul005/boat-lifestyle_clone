@@ -171,7 +171,7 @@ form.addEventListener("submit",function(e){
   if(checkSignin(data.email,data.password)===true){
      localStorage.setItem("signin",JSON.stringify(data));
      alert("Sign in Successfully");
-     window.location.href="#";
+     window.location.href="index.html";
   }else{
      alert("Wrong Username or Password");
   }

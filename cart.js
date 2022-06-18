@@ -95,3 +95,7 @@ document
   .forEach(function (elem) {
     elem.addEventListener("click", cartFunc);
   });
+
+
+  document.querySelector("#addTocart_souvik").addEventListener("click",cartFunc);
+
