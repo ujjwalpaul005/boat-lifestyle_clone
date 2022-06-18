@@ -91,7 +91,7 @@ best_seller_productObj.forEach(function (elem) {
 
   card.append(span, image, details);
 
-  document.querySelector("#best_seller > .cards").append(card)
+  document.querySelector("#best_seller > .cards").append(card);
 
 });
 

@@ -1,6 +1,7 @@
 #cart {
   display: none;
   position: fixed;
+  height: 100vh;
   z-index: 10;
   background-color: #fff;
   color: #000;
@@ -9,6 +10,7 @@
   width: 400px;
   box-sizing: border-box;
 }
+
 
 #cart > div:first-child {
   display: flex;
@@ -41,7 +43,7 @@
 }
 
 .empty {
-  margin: 50% auto;
+  margin: 20% auto;
   width: 50%;
   text-align: center;
   flex-direction: column;
@@ -67,6 +69,14 @@
 #cart_pdt{
     display: flex;
     flex-direction: column;
+    height: max-content;
+    overflow-y: scroll;
+    height: 25%;
+}
+
+#cart_pdt::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
 #cart_pdt > div{
     display: flex;
@@ -111,4 +121,53 @@
     margin: 10px;
     width: 20px;
     cursor: pointer;
+}
+
+#total_cart{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 68vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.24) 5px 0px 8px;
+  color: #000;
+  background-color: #fff;
+}
+
+#total_cart > div{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #fff;
+}
+
+#total_cart > div > p{
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 600;
+}
+
+#total_cart > button{
+  box-sizing: border-box;
+  margin: 0 20px 10px;
+  height: 50px;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 600;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  color: #ff0000;
+  text-transform: uppercase;
+}
+
+#total_cart > button:last-child{
+  color: #fff;
+  background: #ff0000;
+}
+
+#total_cart > button:hover{
+  text-decoration: underline;
 }
