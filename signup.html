@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            margin:auto;
+            height: 600px;
+            font-family: sans-serif;
+            background-color: rgb(44, 42, 42);
+            
+        }
+        input{
+        text-align: center;
+            height:37px;
+            width: 400px;
+            margin-top: 5px;
+            margin-bottom:18px;
+        border: 1px light grey
+        }
+        #details{
+        
+        margin-left:500px;
+            font-weight:lighter;
+            color: #000000;
+            font:16px ,montserrat,sans-serif;
+            
+        }
+        h1{
+            text-align: center;
+            padding-bottom: 30px;
+            padding-top:10px;
+            font-size: 50px;
+            font-weight: lighter;
+            color: white;
+            margin-left: 20px;
+
+        }
+        p{
+            margin-left: 580px;
+            margin-top: -40px;
+            margin-bottom: 40px;
+            color: white;
+        }
+        #create{
+            border:1px solid red;
+            background-color: red;
+        font-weight: bold;
+        color:white;
+        height:42px;
+        font-size: 17px;
+        border-radius: 5px;
+        
+    width: 410px;}
+    a{
+        text-decoration: none;
+        color: black;
+    
+    }
+a{
+    color: white;
+}
+    a:hover{
+        
+        text-decoration: underline;
+    }
+    #details>div>input:first-child{
+        background-color: rgb(44, 42, 42);
+        border-color: white;
+        border-radius: 5px;
+        height: 50px;
+        color: white;
+        font-size: 25px;
+        
+    }
+
+    </style>
+</head>
+<body><div id="container">
+    <h1>Register</h1>
+    <p>Please fill in the fields below:</p>
+    <form>
+        <div id ="details">
+          
+            <div><input id="firstname" tpye="text" placeholder="First Name"/></div>
+   
+            <div><input id="lastname" type="text" placeholder="Last  Name" /></div>
+   
+            <div><input id="email" type="text"  placeholder="Email" /></div>
+ 
+     <div><input id="password" type="password"  placeholder="Password"/></div>
+    <input  type ="submit"  id="create" value="CREATE ACCOUNT" >
+    <div><a href ="" id="loginlin">Already have an account ?</a>  <a href ="signIn.html" id="storelink">Login</a>
+    
+    </div></form>
+</div>
+</body>
+<script>
+   
+    // 1st step
+    let form=document.querySelector("form");
+    let userData=JSON.parse(localStorage.getItem("userData"))||[];
+    // 2nd step
+    form.addEventListener("submit", function(event){
+      event.preventDefault();
+
+        let data={
+            name:form.name.value,
+            email:form.email.value,
+            password:form.password.value,
+        }
+         
+            if (checkEmails(data.email)===true){
+                userData.push(data);
+                localStorage.setItem("userData",JSON.stringify(userData));
+                alert("Account Successfully created");
+            }else{
+                alert("Account Already Exists");
+            }
+    });
+        function checkEmails(email){
+      let filtered=userData.filter(function(element){
+        return email===element.email;
+      })
+    if(filtered.length>0){
+        return false;
+    }else{
+        return true;
+    }
+        }
+    
+    
+
+</script>
+</html>
