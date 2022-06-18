@@ -42,3 +42,42 @@ function next() {
 }
 
 // carousel function end ================
+
+
+
+// other small functions ====================
+function readmore() {
+  document.querySelector(".text").style.height = "auto";
+  document.querySelector(".readmore").style.display = "none";
+}
+
+document.querySelector("#closeCart").addEventListener("click", function(){
+  document.querySelector("#cart").style.display = "none";
+})
+
+document.querySelector("#content").addEventListener("click", function(){
+  window.location.href = "product.html"
+})
+
+function shopping(){
+  window.location.href = "product.html"
+}
+
+function mint(){
+  document.querySelector("#news").innerText = "Warburg invests $100 mn in boAt";
+}
+function forbes(){
+  document.querySelector("#news").innerText = "How India's boAt became the fifth largest wearable brand in the world";
+}
+
+function tech(){
+  document.querySelector("#news").innerText = "The Airdopes 441 is sweat proof and packs in crisp audio. Great for fitness enthusiasts.";
+}
+
+function ET(){
+  document.querySelector("#news").innerText = "IPL 2020: boAt becomes the official audio partner for six teams";
+}
+
+function gadget(){
+  document.querySelector("#news").innerText = "TWS Earbuds Shipments in India Up 723 Percent YoY in Q3, Boat Emerged as Leading Player: Counterpoint";
+}

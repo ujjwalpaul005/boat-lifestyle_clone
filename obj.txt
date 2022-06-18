@@ -227,3 +227,61 @@ gaming_productObj = [
 ]
 
 
+carousel_productObj = [
+
+    {
+        name : "boAt Airdopes 175",
+        price : 1699,
+        category: "Wireless Earbuds",
+        description : "Experience calling like never before with Airdopes 175 that sends across your voice without ambient disturbances via quad mics with ENx™️ Technology. Immerse in the sound of 10mm drivers for 35 hours straight with its massive battery backup. Experience the best sound!",
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/3_dde24c57-aa19-4a19-ab08-64fbd375ef2e.jpg?v=1653469965"
+    },
+
+    {
+        name : "boAt Wave Connect | Bluetooth Calling Smartwatch",
+        price : 3499,
+        category: "Smartwatch",
+        description : "Take calls from your watch using boAt Wave Connect — our newest bluetooth calling smartwatch. Choose from 60+ sports modes using a larger than life 1.69” HD display. Dial up and #StayConnected!",
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1_43c46150-2889-4f7b-bd06-719a0046fddb.jpg?v=1654591342"
+    },
+
+    {
+        name : "boAt Airdopes 135",
+        price : 799,
+        category: "Bluetooth Speakers",
+        description : "Fits your pocket, matches your vibe! Stone 135— super portable Bluetooth Speaker is here with its 5W RMS playing nonstop for 11HRS! Be the life of the party as you double the fun with its TWS Functionality!",
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/stone-2.png?v=1655208846"
+    }
+]
+
+
+
+celeb_obj = [
+    {
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Fierce_-Flamboyant_-Fearless_jpg_563x.jpg?v=1651227694",
+        name : "K L Rahul"
+        tags : "Firce. Flamboyant. fearless."
+        description : "When you hear the crowd roar, be assured that it’s KL Rahul making his way to the field. Our hardcore boAthead, KL Rahul, hits it with his performance as well as his fashion statement. On or off field, Rahul always makes #MoveOfTheChampions."
+    },
+
+    {
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Radiant_-Rebel_-Trailblazer_jpg_563x.jpg?v=1651227770",
+        name : "RASHMIKA MANDANNA",
+        tags : "Radiant. Rebel. Trailblazer."
+        description : "The Queen of sass & hearts, Rashmika Mandanna is the newly on-board boAthead. Do you know what our boAthead Rashmika & boAt have in common? They both leave you speechless with their mind-boggling performance."
+    },
+
+    {
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Bold_-Fashionista_-Hustler_jpg_563x.jpg?v=1651227807",
+        name : "KIARA ADVANI",
+        tags : "Bold. Fashionista. Hustler."
+        description : "A powerhouse who doesn’t believe in backing down - Kiara is a fierce hustler. No wonder why Kiara is our passionate boAthead. The hustler in her has gotten the whole film industry on its toes. So rock your style as you hustle to the top just like the boAt & Kiara way!"
+    },
+
+    {
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Energetic_-Charming_-Free-Spirit_jpg_563x.jpg?v=1651227851",
+        name : "KARTIK AARYAN",
+        tags : "Energetic. Charming. Free Spirit."
+        description : "The cool & confident Kartik Aaryan adds a pinch of sass to the boAthead tribe. His energetic aura suits the boAt vibe just perfectly. So get ready to immerse yourself in surreal sound & experience magic the boAt way!"
+    },
+]

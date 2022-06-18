@@ -2,6 +2,7 @@
 
 best_seller_productObj = [
   {
+    id: "one",
     name: "boAt Rockerz 330",
     rating: 4.8,
     reviews: 258,
@@ -12,6 +13,7 @@ best_seller_productObj = [
   },
 
   {
+    id: "two",
     name: "boAt Airdopes 131 - Wireless Earbuds",
     rating: 4.8,
     reviews: 932,
@@ -22,6 +24,7 @@ best_seller_productObj = [
   },
 
   {
+    id: "three",
     name: "boAt Rockerz 333",
     rating: 4.9,
     reviews: 92,
@@ -32,6 +35,7 @@ best_seller_productObj = [
   },
 
   {
+    id: "four",
     name: "boAt Watch Xtend‌",
     rating: 4.8,
     reviews: 115,
@@ -47,24 +51,48 @@ best_seller_productObj.forEach(function (elem) {
   saving = saving.toFixed(0);
   //   console.log(saving);
 
-  document.querySelector("#best_seller > .cards").innerHTML += `
-    <div class="card">
-    <span class="saving">YOU SAVE ${saving}%</span>
-    <img src=${elem.image}>
-    <div>
-        <h4>${elem.name}</h4>
-        <i class="fa-solid fa-star"><span>${elem.rating} | ${
-    elem.reviews
-  } reviews</span></i>
-        
-        <h5>₹ ${elem.price} <strike>₹ ${elem.mrp}</strike></h5>
-        <p>You Save: ₹ ${elem.mrp - elem.price} (${saving}%)</p>
 
-        <button>ADD TO CART</button>
-        
-    </div>
-    </div>
-    `;
+  let card = document.createElement("div")
+  card.setAttribute("class", "card");
+
+  let span = document.createElement("span");
+  span.setAttribute("class", "saving");
+  span.innerText = "YOU SAVE " + saving + "%";
+
+  let image = document.createElement("img");
+  image.src = elem.image;
+
+  let details = document.createElement("div");
+
+  let name = document.createElement("h4");
+  name.innerText = elem.name;
+
+  let star = document.createElement("i");
+  star.setAttribute("class", "fa-solid fa-star");
+  let rate = document.createElement("span");
+  rate.innerText = elem.rating + " | " + elem.reviews + " reviews";
+  star.append(rate);
+
+  let price = document.createElement("h5");
+  price.innerHTML = `₹ ${elem.price} <strike>₹ ${elem.mrp}</strike>`
+
+  let saves = document.createElement("p");
+  saves.innerHTML= `You Save: ₹ ${elem.mrp - elem.price} (${saving}%)`
+
+  let btn = document.createElement("button");
+  btn.innerText = "ADD TO CART";
+  btn.addEventListener("click", function(){
+    console.log(elem)
+    carting(elem);
+    document.querySelector("#cart").style.display = "block";
+  })
+
+  details.append(name, star, price, saves, btn);
+
+  card.append(span, image, details);
+
+  document.querySelector("#best_seller > .cards").append(card)
+
 });
 
 // smart watches ========================
@@ -115,24 +143,47 @@ smart_watch_productObj.forEach(function (elem) {
   let saving = ((elem.mrp - elem.price) / elem.mrp) * 100;
   saving = saving.toFixed(0);
 
-  document.querySelector("#smart_watch > .cards").innerHTML += `
-    <div class="card">
-    <span class="saving">YOU SAVE ${saving}%</span>
-    <img src=${elem.image}>
-    <div>
-        <h4>${elem.name}</h4>
-        <i class="fa-solid fa-star"><span>${elem.rating} | ${
-    elem.reviews
-  } reviews</span></i>
-        
-        <h5>₹ ${elem.price} <strike>₹ ${elem.mrp}</strike></h5>
-        <p>You Save: ₹ ${elem.mrp - elem.price} (${saving}%)</p>
+  let card = document.createElement("div")
+  card.setAttribute("class", "card");
 
-        <button>ADD TO CART</button>
-        
-    </div>
-    </div>
-    `;
+  let span = document.createElement("span");
+  span.setAttribute("class", "saving");
+  span.innerText = "YOU SAVE " + saving + "%";
+
+  let image = document.createElement("img");
+  image.src = elem.image;
+
+  let details = document.createElement("div");
+
+  let name = document.createElement("h4");
+  name.innerText = elem.name;
+
+  let star = document.createElement("i");
+  star.setAttribute("class", "fa-solid fa-star");
+  let rate = document.createElement("span");
+  rate.innerText = elem.rating + " | " + elem.reviews + " reviews";
+  star.append(rate);
+
+  let price = document.createElement("h5");
+  price.innerHTML = `₹ ${elem.price} <strike>₹ ${elem.mrp}</strike>`
+
+  let saves = document.createElement("p");
+  saves.innerHTML= `You Save: ₹ ${elem.mrp - elem.price} (${saving}%)`
+
+  let btn = document.createElement("button");
+  btn.innerText = "ADD TO CART";
+  btn.addEventListener("click", function(){
+    console.log(elem);
+    carting(elem);
+    document.querySelector("#cart").style.display = "block";
+  })
+
+  details.append(name, star, price, saves, btn);
+
+  card.append(span, image, details);
+
+  document.querySelector("#smart_watch > .cards").append(card)
+
 });
 
 // trending_Wireless_productObj====================
@@ -183,25 +234,49 @@ trending_Wireless_productObj.forEach(function (elem) {
   let saving = ((elem.mrp - elem.price) / elem.mrp) * 100;
   saving = saving.toFixed(0);
 
-  document.querySelector("#trending_wireless > .cards").innerHTML += `
-    <div class="card">
-    <span class="saving">YOU SAVE ${saving}%</span>
-    <img src=${elem.image}>
-    <div>
-        <h4>${elem.name}</h4>
-        <i class="fa-solid fa-star"><span>${elem.rating} | ${
-    elem.reviews
-  } reviews</span></i>
-        
-        <h5>₹ ${elem.price} <strike>₹ ${elem.mrp}</strike></h5>
-        <p>You Save: ₹ ${elem.mrp - elem.price} (${saving}%)</p>
+  let card = document.createElement("div")
+  card.setAttribute("class", "card");
 
-        <button>ADD TO CART</button>
-        
-    </div>
-    </div>
-    `;
+  let span = document.createElement("span");
+  span.setAttribute("class", "saving");
+  span.innerText = "YOU SAVE " + saving + "%";
+
+  let image = document.createElement("img");
+  image.src = elem.image;
+
+  let details = document.createElement("div");
+
+  let name = document.createElement("h4");
+  name.innerText = elem.name;
+
+  let star = document.createElement("i");
+  star.setAttribute("class", "fa-solid fa-star");
+  let rate = document.createElement("span");
+  rate.innerText = elem.rating + " | " + elem.reviews + " reviews";
+  star.append(rate);
+
+  let price = document.createElement("h5");
+  price.innerHTML = `₹ ${elem.price} <strike>₹ ${elem.mrp}</strike>`
+
+  let saves = document.createElement("p");
+  saves.innerHTML= `You Save: ₹ ${elem.mrp - elem.price} (${saving}%)`
+
+  let btn = document.createElement("button");
+  btn.innerText = "ADD TO CART";
+  btn.addEventListener("click", function(){
+    console.log(elem)
+    carting(elem)
+    document.querySelector("#cart").style.display = "block";
+  })
+
+  details.append(name, star, price, saves, btn);
+
+  card.append(span, image, details);
+
+  document.querySelector("#trending_wireless > .cards").append(card)
+
 });
+
 
 // Trending_Wired_productObj========================
 
@@ -251,25 +326,49 @@ Trending_Wired_productObj.forEach(function (elem) {
   let saving = ((elem.mrp - elem.price) / elem.mrp) * 100;
   saving = saving.toFixed(0);
 
-  document.querySelector("#trending_wired > .cards").innerHTML += `
-    <div class="card">
-    <span class="saving">YOU SAVE ${saving}%</span>
-    <img src=${elem.image}>
-    <div>
-        <h4>${elem.name}</h4>
-        <i class="fa-solid fa-star"><span>${elem.rating} | ${
-    elem.reviews
-  } reviews</span></i>
-        
-        <h5>₹ ${elem.price} <strike>₹ ${elem.mrp}</strike></h5>
-        <p>You Save: ₹ ${elem.mrp - elem.price} (${saving}%)</p>
+  let card = document.createElement("div")
+  card.setAttribute("class", "card");
 
-        <button>ADD TO CART</button>
-        
-    </div>
-    </div>
-    `;
+  let span = document.createElement("span");
+  span.setAttribute("class", "saving");
+  span.innerText = "YOU SAVE " + saving + "%";
+
+  let image = document.createElement("img");
+  image.src = elem.image;
+
+  let details = document.createElement("div");
+
+  let name = document.createElement("h4");
+  name.innerText = elem.name;
+
+  let star = document.createElement("i");
+  star.setAttribute("class", "fa-solid fa-star");
+  let rate = document.createElement("span");
+  rate.innerText = elem.rating + " | " + elem.reviews + " reviews";
+  star.append(rate);
+
+  let price = document.createElement("h5");
+  price.innerHTML = `₹ ${elem.price} <strike>₹ ${elem.mrp}</strike>`
+
+  let saves = document.createElement("p");
+  saves.innerHTML= `You Save: ₹ ${elem.mrp - elem.price} (${saving}%)`
+
+  let btn = document.createElement("button");
+  btn.innerText = "ADD TO CART";
+  btn.addEventListener("click", function(){
+    console.log(elem)
+    carting(elem)
+    document.querySelector("#cart").style.display = "block";
+  })
+
+  details.append(name, star, price, saves, btn);
+
+  card.append(span, image, details);
+
+  document.querySelector("#trending_wired > .cards").append(card)
+
 });
+
 
 // Trending_Headphones_productObj========================
 
@@ -319,25 +418,50 @@ Trending_Headphones_productObj.forEach(function (elem) {
   let saving = ((elem.mrp - elem.price) / elem.mrp) * 100;
   saving = saving.toFixed(0);
 
-  document.querySelector("#trending_headphone > .cards").innerHTML += `
-    <div class="card">
-    <span class="saving">YOU SAVE ${saving}%</span>
-    <img src=${elem.image}>
-    <div>
-        <h4>${elem.name}</h4>
-        <i class="fa-solid fa-star"><span>${elem.rating} | ${
-    elem.reviews
-  } reviews</span></i>
-        
-        <h5>₹ ${elem.price} <strike>₹ ${elem.mrp}</strike></h5>
-        <p>You Save: ₹ ${elem.mrp - elem.price} (${saving}%)</p>
+  let card = document.createElement("div")
+  card.setAttribute("class", "card");
 
-        <button>ADD TO CART</button>
-        
-    </div>
-    </div>
-    `;
+  let span = document.createElement("span");
+  span.setAttribute("class", "saving");
+  span.innerText = "YOU SAVE " + saving + "%";
+
+  let image = document.createElement("img");
+  image.src = elem.image;
+
+  let details = document.createElement("div");
+
+  let name = document.createElement("h4");
+  name.innerText = elem.name;
+
+  let star = document.createElement("i");
+  star.setAttribute("class", "fa-solid fa-star");
+  let rate = document.createElement("span");
+  rate.innerText = elem.rating + " | " + elem.reviews + " reviews";
+  star.append(rate);
+
+  let price = document.createElement("h5");
+  price.innerHTML = `₹ ${elem.price} <strike>₹ ${elem.mrp}</strike>`
+
+  let saves = document.createElement("p");
+  saves.innerHTML= `You Save: ₹ ${elem.mrp - elem.price} (${saving}%)`
+
+  let btn = document.createElement("button");
+  btn.innerText = "ADD TO CART";
+  btn.addEventListener("click", function(){
+    console.log(elem)
+    carting(elem)
+    
+    document.querySelector("#cart").style.display = "block";
+  })
+
+  details.append(name, star, price, saves, btn);
+
+  card.append(span, image, details);
+
+  document.querySelector("#trending_headphone > .cards").append(card)
+
 });
+
 
 // gaming_productObj===============================
 
@@ -387,22 +511,255 @@ gaming_productObj.forEach(function (elem) {
   let saving = ((elem.mrp - elem.price) / elem.mrp) * 100;
   saving = saving.toFixed(0);
 
-  document.querySelector("#gaming > .cards").innerHTML += `
-    <div class="card">
-    <span class="saving">YOU SAVE ${saving}%</span>
-    <img src=${elem.image}>
-    <div>
-        <h4>${elem.name}</h4>
-        <i class="fa-solid fa-star"><span>${elem.rating} | ${
-    elem.reviews
-  } reviews</span></i>
-        
-        <h5>₹ ${elem.price} <strike>₹ ${elem.mrp}</strike></h5>
-        <p>You Save: ₹ ${elem.mrp - elem.price} (${saving}%)</p>
+  let card = document.createElement("div")
+  card.setAttribute("class", "card");
 
-        <button>ADD TO CART</button>
-        
-    </div>
-    </div>
-    `;
+  let span = document.createElement("span");
+  span.setAttribute("class", "saving");
+  span.innerText = "YOU SAVE " + saving + "%";
+
+  let image = document.createElement("img");
+  image.src = elem.image;
+
+  let details = document.createElement("div");
+
+  let name = document.createElement("h4");
+  name.innerText = elem.name;
+
+  let star = document.createElement("i");
+  star.setAttribute("class", "fa-solid fa-star");
+  let rate = document.createElement("span");
+  rate.innerText = elem.rating + " | " + elem.reviews + " reviews";
+  star.append(rate);
+
+  let price = document.createElement("h5");
+  price.innerHTML = `₹ ${elem.price} <strike>₹ ${elem.mrp}</strike>`
+
+  let saves = document.createElement("p");
+  saves.innerHTML= `You Save: ₹ ${elem.mrp - elem.price} (${saving}%)`
+
+  let btn = document.createElement("button");
+  btn.innerText = "ADD TO CART";
+  btn.addEventListener("click", function(){
+    console.log(elem)
+    carting(elem)
+    document.querySelector("#cart").style.display = "block";
+  })
+
+  details.append(name, star, price, saves, btn);
+
+  card.append(span, image, details);
+
+  document.querySelector("#gaming > .cards").append(card)
+
 });
+
+
+// new launches ===================
+
+carousel_productObj = [
+  {
+    name: "boAt Airdopes 175",
+    price: 1699,
+    category: "Wireless Earbuds",
+    description:
+      "Experience calling like never before with Airdopes 175 that sends across your voice without ambient disturbances via quad mics with ENx™️ Technology. Immerse in the sound of 10mm drivers for 35 hours straight with its massive battery backup. Experience the best sound!",
+    image:
+      "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/3_dde24c57-aa19-4a19-ab08-64fbd375ef2e.jpg?v=1653469965",
+  },
+
+  {
+    name: "boAt Wave Connect | Bluetooth Calling Smartwatch",
+    price: 3499,
+    category: "Smartwatch",
+    description:
+      "Take calls from your watch using boAt Wave Connect — our newest bluetooth calling smartwatch. Choose from 60+ sports modes using a larger than life 1.69” HD display. Dial up and #StayConnected!",
+    image:
+      "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1_43c46150-2889-4f7b-bd06-719a0046fddb.jpg?v=1654591342",
+  },
+
+  {
+    name: "boAt Airdopes 135",
+    price: 799,
+    category: "Bluetooth Speakers",
+    description:
+      "Fits your pocket, matches your vibe! Stone 135— super portable Bluetooth Speaker is here with its 5W RMS playing nonstop for 11HRS! Be the life of the party as you double the fun with its TWS Functionality!",
+    image:
+      "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/stone-2.png?v=1655208846",
+  },
+];
+
+let new_i = 0;
+newLaunchesChange(new_i);
+setInterval(function () {
+  new_i++;
+  if (new_i > 2) {
+    new_i = 0;
+  }
+
+  newLaunchesChange(new_i);
+}, 5000);
+
+function newLaunchesChange(new_i) {
+  let newLaunches = document.querySelector("#content");
+
+  newLaunches.innerHTML = `
+<p class="newTag">New</p>
+<img
+  src=${carousel_productObj[new_i].image}
+/>
+
+<div class="details">
+  <img
+    src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Vector_Smart_Object_6085a897-ef0f-41c5-9690-3de81a71112f.png?v=1642419136"
+  />
+  <h5>${carousel_productObj[new_i].category}</h5>
+  <h4>${carousel_productObj[new_i].name}</h4>
+  <h5>Special Launch Price</h5>
+  <h2>Rs. ${carousel_productObj[new_i].price}</h2>
+  <p>Description</p>
+  <p class="text">
+  ${carousel_productObj[new_i].description}
+    <span class="readmore" onMouseover="readmore()">Read More...</span>
+  </p>
+  <div>
+    <button>EXPLORE MORE</button>
+  </div>
+</div>
+`;
+}
+
+
+let left = document.querySelector("#left");
+left.addEventListener("click", left_pdt);
+
+let right = document.querySelector("#right");
+right.addEventListener("click", right_pdt);
+
+function left_pdt() {
+  new_i--;
+  if (new_i < 0) {
+    new_i = 2;
+  }
+
+  newLaunchesChange(new_i);
+}
+
+function right_pdt() {
+  new_i++;
+  if (new_i > 2) {
+    new_i = 0;
+  }
+
+  newLaunchesChange(new_i);
+}
+
+// celeb_reviews ====================
+celeb_obj = [
+  {
+    image:
+      "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Fierce_-Flamboyant_-Fearless_jpg_563x.jpg?v=1651227694",
+    name: "K L Rahul",
+    tags: "Firce. Flamboyant. fearless.",
+    description:
+      "When you hear the crowd roar, be assured that it’s KL Rahul making his way to the field. Our hardcore boAthead, KL Rahul, hits it with his performance as well as his fashion statement. On or off field, Rahul always makes #MoveOfTheChampions.",
+  },
+
+  {
+    image:
+      "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Radiant_-Rebel_-Trailblazer_jpg_563x.jpg?v=1651227770",
+    name: "RASHMIKA MANDANNA",
+    tags: "Radiant. Rebel. Trailblazer.",
+    description:
+      "The Queen of sass & hearts, Rashmika Mandanna is the newly on-board boAthead. Do you know what our boAthead Rashmika & boAt have in common? They both leave you speechless with their mind-boggling performance.",
+  },
+
+  {
+    image:
+      "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Bold_-Fashionista_-Hustler_jpg_563x.jpg?v=1651227807",
+    name: "KIARA ADVANI",
+    tags: "Bold. Fashionista. Hustler.",
+    description:
+      "A powerhouse who doesn’t believe in backing down - Kiara is a fierce hustler. No wonder why Kiara is our passionate boAthead. The hustler in her has gotten the whole film industry on its toes. So rock your style as you hustle to the top just like the boAt & Kiara way!",
+  },
+
+  {
+    image:
+      "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Energetic_-Charming_-Free-Spirit_jpg_563x.jpg?v=1651227851",
+    name: "KARTIK AARYAN",
+    tags: "Energetic. Charming. Free Spirit.",
+    description:
+      "The cool & confident Kartik Aaryan adds a pinch of sass to the boAthead tribe. His energetic aura suits the boAt vibe just perfectly. So get ready to immerse yourself in surreal sound & experience magic the boAt way!",
+  },
+];
+
+let celeb_i = 0;
+celebReview(celeb_i);
+
+setInterval(function () {
+  celeb_i++;
+  if (celeb_i > 2) {
+    celeb_i = 0;
+  }
+
+  celebReview(celeb_i);
+}, 5000);
+
+function celebReview(celeb_i) {
+  let celeb = document.querySelector("#celeb");
+  celeb.innerHTML = `
+<img
+  src=${celeb_obj[celeb_i].image}
+/>
+
+<div class="celeb_details">
+  <h2>Meet the bo<span>A</span>theads</h5>
+  <h4>${celeb_obj[celeb_i].name}</h4>
+  <h3>${celeb_obj[celeb_i].tags}</h3>
+  <p>${celeb_obj[celeb_i].description}</p>
+</div>
+`;
+}
+
+let c_left = document.querySelector("#celeb_left");
+c_left.addEventListener("click", left_celeb);
+
+let c_right = document.querySelector("#celeb_right");
+c_right.addEventListener("click", right_celeb);
+
+function left_celeb() {
+  celeb_i--;
+  if (celeb_i < 0) {
+    celeb_i = 3;
+  }
+
+  celebReview(celeb_i);
+}
+
+function right_celeb() {
+  celeb_i++;
+  if (celeb_i > 3) {
+    celeb_i = 0;
+  }
+
+  celebReview(celeb_i);
+}
+
+
+
+// cart function=================
+
+function carting(elem){
+  let cList = JSON.parse(localStorage.getItem("cart")) || [];
+
+  let obj = {
+    name : elem.name,
+    price : elem.price,
+    image : elem.image,
+    quantity : 1,
+  }
+
+  cList.push(obj);
+
+  localStorage.setItem("cart", JSON.stringify(cList))
+}

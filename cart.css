@@ -1,0 +1,114 @@
+#cart {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  background-color: #fff;
+  color: #000;
+  right: 0;
+  height: 100vw;
+  width: 400px;
+  box-sizing: border-box;
+}
+
+#cart > div:first-child {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  background-color: #ff0000;
+  color: #fff;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 20px;
+  height: 40px;
+}
+
+#cart > div:first-child > p {
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.ribbon {
+  background: #000;
+  display: flex;
+  color: #fff;
+  height: 40px;
+  font-size: 12px;
+  padding: 6px 12px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  align-items: center;
+  text-align: left;
+}
+
+.empty {
+  margin: 50% auto;
+  width: 50%;
+  text-align: center;
+  flex-direction: column;
+}
+
+.empty > button {
+  margin-top: 40px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 15px;
+  background: #ff0000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.empty > button:hover {
+  color: #000;
+  background-color: #ef0000;
+}
+
+#cart_pdt{
+    display: flex;
+    flex-direction: column;
+}
+#cart_pdt > div{
+    display: flex;
+    box-sizing: border-box;
+    padding: 15px;
+    position: relative;
+}
+#cart_pdt > div > img{
+    width: 90px;
+}
+
+#cart_pdt > div > div{
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+
+#cart_pdt > div > div > h3{
+    color: #ff0000;
+}
+
+#cart_pdt > div > div > button{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #000;
+    color: #ff0000;
+    background-color: white;
+    font-weight: 700;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+#cart_pdt > div > div > span{
+    margin: 10px;
+    text-align: center;
+}
+
+#cart_pdt > div > div > img{
+    position: absolute;
+    right: 60px;
+    margin: 10px;
+    width: 20px;
+    cursor: pointer;
+}
