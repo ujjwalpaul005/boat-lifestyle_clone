@@ -1,0 +1,131 @@
+*{
+    background-color:black;
+    color:white;
+    font-family: 'Anek Malayalam', sans-serif;
+font-family: 'Roboto', sans-serif;
+letter-spacing:1px;
+}
+h4,h5{
+    font-family: 'Anek Malayalam', sans-serif;
+font-family: 'Roboto', sans-serif;
+letter-spacing:1px;
+}
+#first{
+    display:flex;
+   
+}
+
+#first>div{
+    margin-left:40px;
+
+    /* border:1px solid green; */
+    
+}
+#first>div:nth-child(2){
+  margin: auto;
+  margin-top:30px;
+  
+}
+#first>div:nth-child(2)>p{
+    cursor:pointer;
+}
+#first>div:nth-child(3){
+    margin: auto;
+    margin-top:30px;
+    
+  }
+  #first>div:nth-child(3)>p{
+    cursor:pointer;
+}
+  #first>div:nth-child(4){
+    margin: auto;
+    margin-top:30px;
+    
+  }
+  #first>div:nth-child(4)>p{
+    cursor:pointer;
+}
+input{
+    border-color:none;
+    margin: auto;
+    border: 0ch;
+    width:250px;
+    padding:10px;
+}
+button{
+    font-size:medium;
+    cursor: pointer;
+    border-color:none;
+    margin: auto;
+    border-radius:5px;
+    border: 0ch;
+    width:200px;
+
+    height:40px;
+    padding:10px;
+    background-color:#ff0000;
+}
+#border{
+    display:flex;
+    width:500px;
+    height:50px;
+    border-radius:5px;
+    border:1px solid rgba(128,128,128,0.5);
+}
+#first>div img{
+   margin-top:70px;
+   margin-bottom:8px;
+   cursor: pointer;
+   /* border:1px solid purple; */
+   
+    height:39px;
+}
+#second{
+    display:flex;
+    cursor: pointer;
+   margin-top:40px;
+    height:30px;
+    justify-content:space-around;
+    width:300px;
+   /* border:1px solid red; */
+
+}
+ 
+
+p{
+    color:#bdbdbd;
+    font-size:13px;
+   font-weight:bold;
+   word-spacing:1px;
+}
+#card{
+    display:flex;
+    /* border:1px solid red; */
+    justify-content:space-around;
+    margin-top:70px;
+   
+}
+#card>div{
+    width:700px; 
+    /* border:1px solid green;    */
+}
+#card>div:first-child{
+    width:500px;
+}
+#card>div:last-child{
+    width:600px;
+    display:flex;
+    
+    /* border:1px solid blue; */
+    justify-content:space-around;
+}
+#download>div>img{
+    /* border:1px solid red; */
+    cursor: pointer;
+}
+
+#rights{
+    margin-top:30px;
+    /* border:1px solid red; */
+   text-align: center;
+}
