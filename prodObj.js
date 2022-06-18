@@ -1,587 +1,259 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Document</title>
-    <style>
-      body,
-      * {
-        background-color: rgb(37, 37, 37);
-        font-family: "Montserrat", sans-serif;
-      }
-      /* #navbar {
-        background-color: black;
-        height: 100px;
-      } */
-      #banner > div {
-        position: absolute;
-        color: aliceblue;
-        font-size: large;
-        padding-top: 20px;
-        padding-left: 30px;
-        letter-spacing: 1px;
-        font-family: "Montserrat", sans-serif;
-        background-color: transparent;
-      }
-      span {
-        background-color: transparent;
-      }
-      a {
-        box-sizing: border-box;
-        background-color: transparent;
-        color: rgb(252, 196, 196);
-        text-decoration: none;
-      }
-      a:hover {
-        color: white;
-      }
-
-      #banner > img {
-        width: 100%;
-      }
-      hr {
-        width: 90%;
-        color: grey;
-      }
-      h1 {
-        box-sizing: border-box;
-        color: white;
-        padding-left: 30px;
-        font-size: 50px;
-      }
-
-      h1 + p {
-        text-align: right;
-        color: white;
-      }
-      p > select {
-        box-sizing: border-box;
-        color: white;
-        border: 0px;
-        font-size: 20px;
-        font-weight: 700;
-      }
-      option {
-        font-size: 20px;
-      }
-      #productsGrid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: auto;
-        row-gap: 50px;
-        column-gap: 25px;
-        justify-content: space-around;
-        align-items: center;
-        margin: 0px 30px;
-        /* box-sizing: border-box; */
-      }
-      #productsGrid > div {
-        display: flex;
-        flex-direction: column;
-        /* align-items: center; */
-        border-radius: 10px;
-        /* margin: auto; */
-        width: 100%;
-
-        box-sizing: border-box;
-        /* padding: 0px 15px; */
-        background-color: black;
-      }
-      #productsGrid > div:last-child {
-        margin-bottom: 0px;
-        /* width: 80%; */
-      }
-      #productsGrid > div > img {
-        height: 230px;
-        width: auto;
-        background-color: #e3e3e3;
-        margin: auto;
-        /* height: 280px; */
-        /* width: 100%; */
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-      }
-      #productsGrid > div > p {
-        position: absolute;
-
-        background-color: white;
-      }
-      p > img {
-        width: 5%;
-        /* margin-bottom: -2px; */
-      }
-
-      #productsGrid > div > div {
-        background-color: white;
-        margin: auto;
-        margin-bottom: 5px;
-        width: 95%;
-        border: 1px solid white;
-        box-sizing: border-box;
-        /* padding: 10px; */
-      }
-      #productsGrid > div > div > p,
-      #productsGrid > div > div > span {
-        padding: 0px 20px;
-      }
-
-      #productsGrid > div > div > :nth-child(2) {
-        margin-top: -10px;
-      }
-      button {
-        background-color: rgb(255, 0, 0);
-        border-radius: 5px;
-        border: 0px;
-        color: white;
-        padding: 10px;
-        width: 100%;
-        margin-bottom: 5px;
-        cursor: pointer;
-        font-weight: 700;
-      }
-     
-    </style>
-  </head>
-  <body>
-    <div id="navbar">
-      <!-- this is a dummy navbar, add the functional navbar here -->
-    </div>
-    <div id="banner">
-      <div>
-        <a href="index.html">Home /</a>
-        <span id="categoryIcon">product category will be displayed here</span>
-      </div>
-
-      <img
-        src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Rockerz-_Catgry_web_d201c6e3-e067-4280-a127-56a2e1b51399.jpg?v=1634806683"
-        alt=""
-      />
-    </div>
-    <h1 id="heading">product category will be displayed here</h1>
-    <p>
-      Sort By
-      <select name="" id="sorting">
-        <!-- sorting functionality is not added yet -->
-
-        <option value="Featured">Featured</option>
-        <option value="Alphabetically, A-Z">Alphabetically, A-Z</option>
-        <option value="Alphabetically, Z-A">Alphabetically, Z-A</option>
-        <option value="Price, low to high">Price, low to high</option>
-        <option value="Price, high to low">Price, high to low</option>
-      </select>
-    </p>
-    <div id="productsGrid">
-      <!-- all the products of rockerz category will be appended here -->
-    </div>
-  </body>
-</html>
-<script>
-  let productObj = [
+productObj = [
     {
-      name: "boAt Rockerz 330",
-      rating: 4.8,
-      reviews: 258,
-      price: 1499,
-      mrp: 2890,
-      color: "BlazingRed",
-      category: "BLUETOOTH EARPHONES",
-      image:
-        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_15634ca0-9f81-4d11-b891-9a1496f709b1_600x.png?v=1641801688",
+        name : "boAt Rockerz 330",
+        rating : 4.8,
+        reviews : 258,
+        price : 1499,
+        mrp : 2990,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_15634ca0-9f81-4d11-b891-9a1496f709b1_600x.png?v=1641801688",
+        category:"Rockerz",
+        pic1:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/asap-n-playback-ocean_700x.jpg?v=1654924451",
+        pic2:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/drivers-red_700x.jpg?v=1654924446",
+        pic3:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/Dual-pairing-red_1500x.jpg?v=1654924448",
+        pic4:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/magnetic-eabuds-and-metallic-navy_700x.jpg?v=1655376287",
+        img1:"https://cdn.shopify.com/s/files/1/0057/8938/4802/files/pi-1-t_4d4842cd-5f58-40da-839d-c15af7aa4c68.png?v=1621411179",
+        img2:"https://cdn.shopify.com/s/files/1/0057/8938/4802/files/330-pi2.png?v=1621516343",
+        img3:"https://cdn.shopify.com/s/files/1/0057/8938/4802/files/pi-3.png?v=1621416448",
+        img4:"https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1001.png?v=1620883574",
+        img5:"https://cdn.shopify.com/s/files/1/0057/8938/4802/files/330-pi.png?v=1621574799"
 
-      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/asap-n-playback-ocean_700x.jpg?v=1654924451",
-      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/drivers-red_700x.jpg?v=1654924446",
-      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/Dual-pairing-red_1500x.jpg?v=1654924448",
-      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/magnetic-eabuds-and-metallic-navy_700x.jpg?v=1655376287",
-      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/pi-1-t_4d4842cd-5f58-40da-839d-c15af7aa4c68.png?v=1621411179",
-      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/330-pi2.png?v=1621516343",
-      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/pi-3.png?v=1621416448",
-      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1001.png?v=1620883574",
-      img5: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/330-pi.png?v=1621574799",
-      description:
-        "Let's drench in music and experience every beat differently. Powered with boAt Signature Sound, Rockerz 330 is here to get you grooving to a thumping bass designed only for audiophiles! Keep your charging worries at bay; Rockerz 330 bluetooth earphones offer a dynamic playtime of 30 hours. That's not it! All is takes is 10 minutes of ASAP charge for 10 hours of playtime. This ergonomically designed neckband promises the best of comfort and style. IPX5 protects the Rockerz from sweat and water; so go ahead and make a run to freshen up your mind for these Rockerz don't let anything hold you back. Seamlessly pair two devices at the same time with the dual pairing Bluetooth v5.0. Type C Charging, Single Press Voice Assistant make your audio experience even more enthralling! It's time, LET'S SETTLE for nothing but the best! ",
     },
 
     {
-      name: "boAt Airdopes 131 - Wireless Earbuds",
-      rating: 4.8,
-      reviews: 932,
-      price: 999,
-      mrp: 2990,
-      color: "CrimsonCream",
-      category: "WIRELESS EARBUDS",
-      image:
-        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/cream_600x.png?v=1642405569",
-
-      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD131TypeC_46c15722-70e3-41fb-94ed-c01677d78546_700x.jpg?v=1655129703",
-      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD131IWP_341b3d39-0544-41da-a95c-ce45c6db85c4_700x.jpg?v=1655129703",
-      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD1314XCharge_a886f994-2e65-48a2-a0c8-dfabe6eebfeb_700x.jpg?v=1655129703https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD1314XCharge_a886f994-2e65-48a2-a0c8-dfabe6eebfeb_700x.jpg?v=1655129703",
-      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD131BV5.0_669ed751-5e7e-4381-9d86-93bc84fe7e6b_700x.jpg?v=1655129703",
-      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Banner1-Product1_51f1ee8d-1008-4121-8280-cb54b2e0c316.png?v=1622018200",
-      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Banner2-product2_2f6bbbb9-a887-481b-b597-72cd0f94821c.png?v=1622018201",
-      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Banner3-product2_7d453894-034a-41ee-a8b4-24ecccccb8e8.png?v=1622018201",
-      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Banner4-Model2_c4ed8bac-e9d5-4f9f-970b-52fce898c52e.png?v=1622018200",
-      img5: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Banner5-product1_6ef02625-b2a0-4671-aebc-414db2681077.png?v=1622018201",
-      description:
-        "Sleek. Comfortable. Stylish. And a Splash of Incredible Colours. Bring alive your favourite sounds with these true wireless earbuds. Equipped with 13mm drivers for the magical boAt signature sound. Designed for supreme ease with Insta Wake N’ Pair technology that auto connects the moment it’s out of the case and Type C Charging. Tws earbuds to drown all the sounds you don’t need and live every moment. With a battery capacity of 40mAh for each earbud, indulge in a blissful audio experience for up to 3 hours in a go. Tap into instant wireless functionality with optimum Bluetooth V5.0 ",
-    },
-    {
-      // <!-- 2 nd colorpod  -->
-      name: "boAt Airdopes 131 - Wireless Earbuds",
-      rating: 4.8,
-      reviews: 932,
-      price: 999,
-      mrp: 2990,
-      color: "ViperGreen",
-      category: "WIRELESS EARBUDS",
-      image:
-        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/viper-green_600x.png?v=1642405569",
-      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD131TypeC_49e1b080-25fd-4db2-a2a0-ca2125ccee73_700x.jpg?v=1655462913",
-      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/FeatureImagesAD131IWP_a1e662fd-302f-414f-bbeb-ccd799248a24_700x.jpg?v=1655462913",
-      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/FeatureImagesAD1314XCharge_226105ac-db75-4727-b475-1e70f97fd380_700x.jpg?v=1655462913",
-      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/FeatureImagesAD131BV5.0_7944d98d-0e8f-46ef-8c37-f015e82dcc7a_700x.jpg?v=1655462913",
-      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/cream_72x.png?v=1642405569",
-      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/viper-green_72x.png?v=1642405569",
-      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/c2386af9-4349-432f-8ba5-2b6aa06025c8_72x.png?v=1642405569",
-      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/32011675-2ad8-4b99-9787-895caf201d28_72x.png?v=1642405569",
-      img5: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/616b4ead-bbd9-4a16-aeab-8d331a16f697_72x.png?v=1642405569",
-      description:
-        "Sleek. Comfortable. Stylish. And a Splash of Incredible Colours. Bring alive your favourite sounds with these true wireless earbuds. Equipped with 13mm drivers for the magical boAt signature sound. Designed for supreme ease with Insta Wake N’ Pair technology that auto connects the moment it’s out of the case and Type C Charging. Tws earbuds to drown all the sounds you don’t need and live every moment. With a battery capacity of 40mAh for each earbud, indulge in a blissful audio experience for up to 3 hours in a go. Tap into instant wireless functionality with optimum Bluetooth V5.0 ",
+        name :"boAt Airdopes 131 - Wireless Earbuds",
+        rating : 4.8,
+        reviews : 932,
+        price : 999,
+        mrp : 2990,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/cream_600x.png?v=1642405569",
+        category:"Airdopes",
+        pic1:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD131TypeC_46c15722-70e3-41fb-94ed-c01677d78546_700x.jpg?v=1655129703",
+        pic2:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD131IWP_341b3d39-0544-41da-a95c-ce45c6db85c4_700x.jpg?v=1655129703",
+        pic3:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD1314XCharge_a886f994-2e65-48a2-a0c8-dfabe6eebfeb_700x.jpg?v=1655129703https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD1314XCharge_a886f994-2e65-48a2-a0c8-dfabe6eebfeb_700x.jpg?v=1655129703",
+        pic4:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD131BV5.0_669ed751-5e7e-4381-9d86-93bc84fe7e6b_700x.jpg?v=1655129703",
+        img1:"https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Banner1-Product1_51f1ee8d-1008-4121-8280-cb54b2e0c316.png?v=1622018200",
+        img2:"https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Banner2-product2_2f6bbbb9-a887-481b-b597-72cd0f94821c.png?v=1622018201",
+        img3:"https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Banner3-product2_7d453894-034a-41ee-a8b4-24ecccccb8e8.png?v=1622018201",
+        img4:"https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Banner4-Model2_c4ed8bac-e9d5-4f9f-970b-52fce898c52e.png?v=1622018200",
+        img5:"https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Banner5-product1_6ef02625-b2a0-4671-aebc-414db2681077.png?v=1622018201"
     },
 
     {
-      // <!--3rd colorpod  -->
-      name: "boAt Airdopes 131 - Wireless Earbuds",
-      rating: 4.8,
-      reviews: 932,
-      price: 999,
-      mrp: 2990,
-      color: "Black",
-      category: "WIRELESS EARBUDS",
-      image:
-        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/c2386af9-4349-432f-8ba5-2b6aa06025c8_600x.png?v=1642405569",
-      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/c2386af9-4349-432f-8ba5-2b6aa06025c8_600x.png?v=1642405569",
-      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD131TypeC_f9ba03b9-5d27-4b6b-ac43-b79374479f0d_700x.jpg?v=1655454358",
-      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/FeatureImagesAD131IWP_6a858bf2-13f4-433a-a8d6-e32bc7239e78_700x.jpg?v=1655454358",
-      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/FeatureImagesAD1314XCharge_37dfa72f-a9e8-4190-a9c0-aa7fb2c57e4b_700x.jpg?v=1655454359",
-      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/cream_72x.png?v=1642405569",
-      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/viper-green_72x.png?v=1642405569",
-      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/c2386af9-4349-432f-8ba5-2b6aa06025c8_72x.png?v=1642405569",
-      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/32011675-2ad8-4b99-9787-895caf201d28_72x.png?v=1642405569",
-      img5: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/616b4ead-bbd9-4a16-aeab-8d331a16f697_72x.png?v=1642405569",
-      description:
-        "Sleek. Comfortable. Stylish. And a Splash of Incredible Colours. Bring alive your favourite sounds with these true wireless earbuds. Equipped with 13mm drivers for the magical boAt signature sound. Designed for supreme ease with Insta Wake N’ Pair technology that auto connects the moment it’s out of the case and Type C Charging. Tws earbuds to drown all the sounds you don’t need and live every moment. With a battery capacity of 40mAh for each earbud, indulge in a blissful audio experience for up to 3 hours in a go. Tap into instant wireless functionality with optimum Bluetooth V5.0",
-    },
-    {
-      name: "boAt Rockerz 330",
-      rating: 4.8,
-      reviews: 258,
-      price: 1499,
-      mrp: 2990,
-      color: "BlazingRed",
-      category: "BLUETOOTH EARPHONES",
-      image:
-        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_15634ca0-9f81-4d11-b891-9a1496f709b1_600x.png?v=1641801688",
-      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/asap-n-playback-ocean_700x.jpg?v=1654924451",
-      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/drivers-red_700x.jpg?v=1654924446",
-      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/Dual-pairing-red_1500x.jpg?v=1654924448",
-      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/magnetic-eabuds-and-metallic-navy_700x.jpg?v=1655376287",
-      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/pi-1-t_4d4842cd-5f58-40da-839d-c15af7aa4c68.png?v=1621411179",
-      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/330-pi2.png?v=1621516343",
-      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/pi-3.png?v=1621416448",
-      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1001.png?v=1620883574",
-      img5: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/330-pi.png?v=1621574799",
-      description:
-        "Let's drench in music and experience every beat differently. Powered with boAt Signature Sound, Rockerz 330 is here to get you grooving to a thumping bass designed only for audiophiles! Keep your charging worries at bay; Rockerz 330 bluetooth earphones offer a dynamic playtime of 30 hours. That's not it! All is takes is 10 minutes of ASAP charge for 10 hours of playtime. This ergonomically designed neckband promises the best of comfort and style. IPX5 protects the Rockerz from sweat and water; so go ahead and make a run to freshen up your mind for these Rockerz don't let anything hold you back. Seamlessly pair two devices at the same time with the dual pairing Bluetooth v5.0. Type C Charging, Single Press Voice Assistant make your audio experience even more enthralling! It's time, LET'S SETTLE for nothing but the best!",
-    },
-
-    // <!-- boAt Airdopes 131 - Wireless Earbuds -->
-    {
-      // <!-- main page -->
-      name: "boAt Airdopes 131 - Wireless Earbuds",
-      rating: 4.8,
-      reviews: 932,
-      price: 999,
-      mrp: 2990,
-      color: "CrimsonCream",
-      category: "WIRELESS EARBUDS",
-      image:
-        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/cream_600x.png?v=1642405569",
-
-      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD131TypeC_46c15722-70e3-41fb-94ed-c01677d78546_700x.jpg?v=1655129703",
-      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD131IWP_341b3d39-0544-41da-a95c-ce45c6db85c4_700x.jpg?v=1655129703",
-      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD1314XCharge_a886f994-2e65-48a2-a0c8-dfabe6eebfeb_700x.jpg?v=1655129703https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD1314XCharge_a886f994-2e65-48a2-a0c8-dfabe6eebfeb_700x.jpg?v=1655129703",
-      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD131BV5.0_669ed751-5e7e-4381-9d86-93bc84fe7e6b_700x.jpg?v=1655129703",
-      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Banner1-Product1_51f1ee8d-1008-4121-8280-cb54b2e0c316.png?v=1622018200",
-      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Banner2-product2_2f6bbbb9-a887-481b-b597-72cd0f94821c.png?v=1622018201",
-      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Banner3-product2_7d453894-034a-41ee-a8b4-24ecccccb8e8.png?v=1622018201",
-      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Banner4-Model2_c4ed8bac-e9d5-4f9f-970b-52fce898c52e.png?v=1622018200",
-      img5: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Banner5-product1_6ef02625-b2a0-4671-aebc-414db2681077.png?v=1622018201",
-      description:
-        "Sleek. Comfortable. Stylish. And a Splash of Incredible Colours. Bring alive your favourite sounds with these true wireless earbuds. Equipped with 13mm drivers for the magical boAt signature sound. Designed for supreme ease with Insta Wake N’ Pair technology that auto connects the moment it’s out of the case and Type C Charging. Tws earbuds to drown all the sounds you don’t need and live every moment. With a battery capacity of 40mAh for each earbud, indulge in a blissful audio experience for up to 3 hours in a go. Tap into instant wireless functionality with optimum Bluetooth V5.0 ",
-    },
-    {
-      // <!-- 2 nd colorpod  -->
-      name: "boAt Airdopes 131 - Wireless Earbuds",
-      rating: 4.8,
-      reviews: 932,
-      price: 999,
-      mrp: 2990,
-      color: "ViperGreen",
-      category: "WIRELESS EARBUDS",
-      image:
-        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/viper-green_600x.png?v=1642405569",
-      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/viper-green_600x.png?v=1642405569",
-      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD131TypeC_2ef81b0a-b1ef-4dc3-aba4-3277c4bf3bf3_700x.jpg?v=1655129703",
-      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/FeatureImagesAD131IWP_7bc5bf6b-1b4a-4156-88d2-1bd0ed77f834_700x.jpg?v=1655129703",
-      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/FeatureImagesAD1314XCharge_7bb1885d-d4a9-4cd7-9750-06d830ab422d_700x.jpg?v=1655129703",
-      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/cream_72x.png?v=1642405569",
-      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/viper-green_72x.png?v=1642405569",
-      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/c2386af9-4349-432f-8ba5-2b6aa06025c8_72x.png?v=1642405569",
-      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/32011675-2ad8-4b99-9787-895caf201d28_72x.png?v=1642405569",
-      img5: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/616b4ead-bbd9-4a16-aeab-8d331a16f697_72x.png?v=1642405569",
-      description:
-        "Sleek. Comfortable. Stylish. And a Splash of Incredible Colours. Bring alive your favourite sounds with these true wireless earbuds. Equipped with 13mm drivers for the magical boAt signature sound. Designed for supreme ease with Insta Wake N’ Pair technology that auto connects the moment it’s out of the case and Type C Charging. Tws earbuds to drown all the sounds you don’t need and live every moment. With a battery capacity of 40mAh for each earbud, indulge in a blissful audio experience for up to 3 hours in a go. Tap into instant wireless functionality with optimum Bluetooth V5.0 ",
+        name : "boAt Rockerz 333",
+        rating : 4.9,
+        reviews : 92,
+        price : 1199,
+        mrp : 3990,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-1_600x.png?v=1641801662"
     },
 
     {
-      // <!--3rd colorpod  -->
-      name: "boAt Airdopes 131 - Wireless Earbuds",
-      rating: 4.8,
-      reviews: 932,
-      price: 999,
-      mrp: 2990,
-      color: "Black",
-      category: "WIRELESS EARBUDS",
-      image:
-        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/c2386af9-4349-432f-8ba5-2b6aa06025c8_600x.png?v=1642405569",
-      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/c2386af9-4349-432f-8ba5-2b6aa06025c8_600x.png?v=1642405569",
-      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ad131FIAD131TypeC_f9ba03b9-5d27-4b6b-ac43-b79374479f0d_700x.jpg?v=1655454358",
-      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/FeatureImagesAD131IWP_6a858bf2-13f4-433a-a8d6-e32bc7239e78_700x.jpg?v=1655454358",
-      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/FeatureImagesAD1314XCharge_37dfa72f-a9e8-4190-a9c0-aa7fb2c57e4b_700x.jpg?v=1655454359",
-      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/cream_72x.png?v=1642405569",
-      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/viper-green_72x.png?v=1642405569",
-      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/c2386af9-4349-432f-8ba5-2b6aa06025c8_72x.png?v=1642405569",
-      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/32011675-2ad8-4b99-9787-895caf201d28_72x.png?v=1642405569",
-      img5: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/616b4ead-bbd9-4a16-aeab-8d331a16f697_72x.png?v=1642405569",
-      description:
-        "Sleek. Comfortable. Stylish. And a Splash of Incredible Colours. Bring alive your favourite sounds with these true wireless earbuds. Equipped with 13mm drivers for the magical boAt signature sound. Designed for supreme ease with Insta Wake N’ Pair technology that auto connects the moment it’s out of the case and Type C Charging. Tws earbuds to drown all the sounds you don’t need and live every moment. With a battery capacity of 40mAh for each earbud, indulge in a blissful audio experience for up to 3 hours in a go. Tap into instant wireless functionality with optimum Bluetooth V5.0",
-    },
-
-    // <!-- boAt Rockerz 330 -->
-    {
-      // <!-- main page -->
-      name: "boAt Rockerz 330",
-      rating: 4.8,
-      reviews: 258,
-      price: 1499,
-      mrp: 2990,
-      color: "Raging Red",
-      category: "BLUETOOTH EARPHONES",
-      image:
-        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_15634ca0-9f81-4d11-b891-9a1496f709b1_600x.png?v=1641801688",
-      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_15634ca0-9f81-4d11-b891-9a1496f709b1_600x.png?v=1641801688",
-      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/asap-n-playback-red_700x.jpg?v=1655376289",
-      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/drivers-red_700x.jpg?v=1655376290",
-      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/Dual-pairing-red_700x.jpg?v=1655376287",
-      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_15634ca0-9f81-4d11-b891-9a1496f709b1_72x.png?v=1641801688",
-      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main3_a08fff6a-7c3d-4663-9499-3421df127e94_72x.png?v=1641801688",
-      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main2_12f5e240-7eec-4b32-8121-29594cae6e84_72x.png?v=1641801688",
-      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main4_72x.png?v=1641801688",
-      img5: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main6_72x.png?v=1641801688",
-      description:
-        "Let's drench in music and experience every beat differently. Powered with boAt Signature Sound, Rockerz 330 is here to get you grooving to a thumping bass designed only for audiophiles! Keep your charging worries at bay; Rockerz 330 bluetooth earphones offer a dynamic playtime of 30 hours. That's not it! All is takes is 10 minutes of ASAP charge for 10 hours of playtime. This ergonomically designed neckband promises the best of comfort and style. IPX5 protects the Rockerz from sweat and water; so go ahead and make a run to freshen up your mind for these Rockerz don't let anything hold you back. Seamlessly pair two devices at the same time with the dual pairing Bluetooth v5.0. Type C Charging, Single Press Voice Assistant make your audio experience even more enthralling! It's time, LET'S SETTLE for nothing but the best!",
-    },
-    {
-      // <!-- 2nd colour bluetooth earphone neckband -->
-
-      name: "boAt Rockerz 330",
-      rating: 4.8,
-      reviews: 258,
-      price: 1499,
-      mrp: 2990,
-      color: "Active Black",
-      category: "BLUETOOTH EARPHONES",
-      image:
-        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main3_a08fff6a-7c3d-4663-9499-3421df127e94_600x.png?v=1641801688",
-      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main3_a08fff6a-7c3d-4663-9499-3421df127e94_600x.png?v=1641801688",
-      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/asap-n-playback-black_700x.jpg?v=1655376292",
-      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/drivers-black_89effc38-7204-4681-bc51-c16bd0d1dffd_700x.jpg?v=1655376288",
-      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/Dual-pairing-black_700x.jpg?v=1655376286",
-      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_15634ca0-9f81-4d11-b891-9a1496f709b1_72x.png?v=1641801688",
-      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main3_a08fff6a-7c3d-4663-9499-3421df127e94_72x.png?v=1641801688",
-      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main2_12f5e240-7eec-4b32-8121-29594cae6e84_72x.png?v=1641801688",
-      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main4_72x.png?v=1641801688",
-      img5: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main6_72x.png?v=1641801688",
-      description:
-        "Let's drench in music and experience every beat differently. Powered with boAt Signature Sound, Rockerz 330 is here to get you grooving to a thumping bass designed only for audiophiles! Keep your charging worries at bay; Rockerz 330 bluetooth earphones offer a dynamic playtime of 30 hours. That's not it! All is takes is 10 minutes of ASAP charge for 10 hours of playtime. This ergonomically designed neckband promises the best of comfort and style. IPX5 protects the Rockerz from sweat and water; so go ahead and make a run to freshen up your mind for these Rockerz don't let anything hold you back. Seamlessly pair two devices at the same time with the dual pairing Bluetooth v5.0. Type C Charging, Single Press Voice Assistant make your audio experience even more enthralling! It's time, LET'S SETTLE for nothing but the best!",
-    },
-    {
-      //   <!-- 3rd colour bluetooth earphone neckband  -->
-      name: "boAt Rockerz 330",
-      rating: 4.8,
-      reviews: 258,
-      price: 1499,
-      mrp: 2990,
-      color: "Blazing Yellow",
-      category: "BLUETOOTH EARPHONES",
-      image:
-        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main2_12f5e240-7eec-4b32-8121-29594cae6e84_600x.png?v=1641801688",
-      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main2_12f5e240-7eec-4b32-8121-29594cae6e84_600x.png?v=1641801688",
-      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/asap-n-playback-yellow_700x.jpg?v=1655376291",
-      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/drivers-yellow_700x.jpg?v=1655376288",
-      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/Dual-pairing-yellow_700x.jpg?v=1655376286",
-      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_15634ca0-9f81-4d11-b891-9a1496f709b1_72x.png?v=1641801688",
-      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main3_a08fff6a-7c3d-4663-9499-3421df127e94_72x.png?v=1641801688",
-      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main2_12f5e240-7eec-4b32-8121-29594cae6e84_72x.png?v=1641801688",
-      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main4_72x.png?v=1641801688",
-      img5: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main6_72x.png?v=1641801688",
-      description:
-        "Let's drench in music and experience every beat differently. Powered with boAt Signature Sound, Rockerz 330 is here to get you grooving to a thumping bass designed only for audiophiles! Keep your charging worries at bay; Rockerz 330 bluetooth earphones offer a dynamic playtime of 30 hours. That's not it! All is takes is 10 minutes of ASAP charge for 10 hours of playtime. This ergonomically designed neckband promises the best of comfort and style. IPX5 protects the Rockerz from sweat and water; so go ahead and make a run to freshen up your mind for these Rockerz don't let anything hold you back. Seamlessly pair two devices at the same time with the dual pairing Bluetooth v5.0. Type C Charging, Single Press Voice Assistant make your audio experience even more enthralling! It's time, LET'S SETTLE for nothing but the best!",
-    },
-    // <!-- boAt Rockerz 333 -->
-    {
-      //   <!-- main page -->
-      name: "boAt Rockerz 333",
-      rating: 4.9,
-      reviews: 92,
-      price: 1499,
-      mrp: 3990,
-      color: "Teal Green",
-      category: "BLUETOOTH EARPHONES",
-      image:
-        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_600x.png?v=1641801662",
-      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_600x.png?v=1641801662",
-      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/Teal-Green02_700x.png?v=1655133687",
-      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/Teal-Green03_700x.png?v=1655133687",
-      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/Teal-Green04_700x.png?v=1655133688",
-      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_72x.png?v=1641801662",
-      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-1_72x.png?v=1641801662",
-      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-2_72x.png?v=1626336060",
-      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-3_72x.png?v=1641801638",
-      description:
-        "When your taste in music is so unique, why should your audio wear be any different? Speak your unique style with Rockerz 333 - a bold and powerful wireless earphones for the part of you that wants more. More of sound, more of style, and more of power. Immerse into your jam with boAt Signature Sound and 30 HRS of non stop playback. Let nothing limit your hustle with Dual Pairing that lets you connect two devices at once. Don’t hold back, choose your vibe with Rockerz 333.",
-    },
-    {
-      // <!-- 2nd imagpod -->
-      name: "boAt Rockerz 333",
-      rating: 4.9,
-      reviews: 92,
-      price: 1499,
-      mrp: 3990,
-      color: "Active Black",
-      category: "BLUETOOTH EARPHONES",
-      image:
-        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-1_600x.png?v=1641801662",
-      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-1_600x.png?v=1641801662",
-      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/R333-FI_Black02_700x.png?v=1655133631",
-      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/R333-FI_Black03_700x.png?v=1655133633",
-      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/R333-FI_Black04_700x.png?v=1655133632",
-      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_72x.png?v=1641801662",
-      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-1_72x.png?v=1641801662",
-      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-2_72x.png?v=1626336060",
-      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-3_72x.png?v=1641801638",
-      description:
-        "When your taste in music is so unique, why should your audio wear be any different? Speak your unique style with Rockerz 333 - a bold and powerful wireless earphones for the part of you that wants more. More of sound, more of style, and more of power. Immerse into your jam with boAt Signature Sound and 30 HRS of non stop playback. Let nothing limit your hustle with Dual Pairing that lets you connect two devices at once. Don’t hold back, choose your vibe with Rockerz 333.",
-    },
-    {
-      //   <!-- 3rd imagepod -->
-      name: "boAt Rockerz 333",
-      rating: 4.9,
-      reviews: 92,
-      price: 1499,
-      mrp: 3990,
-      color: "Cherry Black",
-      category: "BLUETOOTH EARPHONES",
-      image:
-        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-2_600x.png?v=1626336060",
-      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-2_600x.png?v=1626336060",
-      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/R333-FI_Cherry-Black02_700x.png?v=1655133659",
-      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/R333-FI_Cherry-Black03_700x.png?v=1655133658",
-      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/R333-FI_Cherry-Black04_700x.png?v=1655133658",
-      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_72x.png?v=1641801662",
-      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-1_72x.png?v=1641801662",
-      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-2_72x.png?v=1626336060",
-      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-3_72x.png?v=1641801638",
-      description:
-        "When your taste in music is so unique, why should your audio wear be any different? Speak your unique style with Rockerz 333 - a bold and powerful wireless earphones for the part of you that wants more. More of sound, more of style, and more of power. Immerse into your jam with boAt Signature Sound and 30 HRS of non stop playback. Let nothing limit your hustle with Dual Pairing that lets you connect two devices at once. Don’t hold back, choose your vibe with Rockerz 333.",
-    },
-    // <!-- boAt Watch Xtend‌ -->
-    {
-      // <!-- main image -->
-      name: "boAt Watch Xtend‌",
-      rating: 4.8,
-      reviews: 113,
-      price: 2999,
-      mrp: 7990,
-      color: "Pitch Black",
-      category: "SMART WATCHES",
-      image:
-        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main2_529ecf13-c993-4fe7-a2d6-9357f1a47db4_600x.png?v=1650387008",
-      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main2_529ecf13-c993-4fe7-a2d6-9357f1a47db4_600x.png?v=1650387008",
-      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/xtend-FI-black_05_700x.jpg?v=1655183505",
-      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/xtend-FI-black_03_700x.jpg?v=1655183505",
-      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/xtend-FI-black_02_700x.jpg?v=1655183505",
-      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_72x.png?v=1641801662",
-      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-1_72x.png?v=1641801662",
-      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-2_72x.png?v=1626336060",
-      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-3_72x.png?v=1641801638",
-      description:
-        "Ask more, get more, and do more with the smartest smartwatch in town - the all-new boAt Xtend. Leave your phone in your pocket and get your tasks done with a built-in Alexa. Take control over your music, fitness, and more with a 1.69 inch complete capacitive LCD display. Your wellness is now on your wrist with its Guided Meditative Breathing, Stress Monitor, and Sleep & SPO2 Monitoring. Its 50 watch faces let you don a unique style every day. Make more out of your days with boAt Xtend.",
-    },
-    {
-      //  <!-- 2nd image icon -->
-      name: "boAt Watch Xtend‌",
-      rating: 4.8,
-      reviews: 113,
-      price: 2999,
-      mrp: 7990,
-      color: "Olive Green",
-      category: "SMART WATCHES",
-      image:
-        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_600x.png?v=1650386995",
-      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_600x.png?v=1650386995",
-      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/xtend-FI-green_05_700x.jpg?v=1655183505",
-      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/xtend-FI-green_03_700x.jpg?v=1655183505",
-      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/xtend-FI-green_02_700x.jpg?v=1655183505",
-      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_72x.png?v=1641801662",
-      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-1_72x.png?v=1641801662",
-      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-2_72x.png?v=1626336060",
-      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-3_72x.png?v=1641801638",
-      description:
-        "Ask more, get more, and do more with the smartest smartwatch in town - the all-new boAt Xtend. Leave your phone in your pocket and get your tasks done with a built-in Alexa. Take control over your music, fitness, and more with a 1.69 inch complete capacitive LCD display. Your wellness is now on your wrist with its Guided Meditative Breathing, Stress Monitor, and Sleep & SPO2 Monitoring. Its 50 watch faces let you don a unique style every day. Make more out of your days with boAt Xtend.",
+        name : "boAt Watch Xtend‌",
+        rating : 4.8,
+        reviews : 115,
+        price : 3199,
+        mrp : 7990,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/xtend_black_600x.png?v=1650387008"
     },
 
     {
-      // <!-- 3rd image pod -->
-      name: "boAt Watch Xtend‌",
-      rating: 4.8,
-      reviews: 113,
-      price: 2999,
-      mrp: 7990,
-      color: "Sandy Cream",
-      category: "SMART WATCHES",
-      image:
-        "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main6_2_600x.png?v=1640628318",
-      pic1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main6_2_600x.png?v=1640628318",
-      pic2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/xtend-FI-pink_05_700x.jpg?v=1655183505",
-      pic3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/xtend-FI-pink_03_700x.jpg?v=1655183505",
-      pic4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/xtend-FI-pink_02_700x.jpg?v=1655183505",
-      img1: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_72x.png?v=1641801662",
-      img2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-1_72x.png?v=1641801662",
-      img3: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-2_72x.png?v=1626336060",
-      img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-3_72x.png?v=1641801638",
-      description:
-        "Ask more, get more, and do more with the smartest smartwatch in town - the all-new boAt Xtend. Leave your phone in your pocket and get your tasks done with a built-in Alexa. Take control over your music, fitness, and more with a 1.69 inch complete capacitive LCD display. Your wellness is now on your wrist with its Guided Meditative Breathing, Stress Monitor, and Sleep & SPO2 Monitoring. Its 50 watch faces let you don a unique style every day. Make more out of your days with boAt Xtend.",
+        name : "boAt Watch Wave Pro",
+        rating : 5.0,
+        reviews : 10,
+        price : 3299,
+        mrp : 6990,
+        category:"smart_watch",
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_0ae2597d-dee4-42fd-9a18-eb4ae0b3bc43_600x.png?v=1647765304"
     },
 
+    {
+        name : "boAt Watch Flash",
+        rating : 4.8,
+        reviews : 43,
+        price : 2499,
+        mrp : 6990,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/9da7e1ae-89f2-42c4-9714-76ac5ec83817_600x.png?v=1625045743"
+    },
+
+    {
+        name : "boAt Storm",
+        rating : 4.8,
+        reviews : 912,
+        price : 2499,
+        mrp : 5990,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/1bca7fb9-5f5c-42e3-930a-8a430d8a9e60_600x.png?v=1625046217"
+    },
+
+    {
+        name : "boAt Watch Iris",
+        rating : 5.0,
+        reviews : 2,
+        price : 4399,
+        mrp : 11999,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/mainred_600x.png?v=1640237576"
+    }
+]
+
+trending_Wireless_productObj = [
+    {
+        name : "boAt Rockerz 235 V2",
+        rating : 4.8,
+        reviews : 1007,
+        price : 999,
+        mrp : 2990,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/5f7d33ad-39a9-4426-836e-c300814839b9_600x.png?v=1625046105"
+    },
+
+    {
+        name : "boAt Rockerz 245 V2",
+        rating : 4.8,
+        reviews : 169,
+        price : 999,
+        mrp : 2990,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/245v2_main_2_600x.png?v=1627276367"
+    },
+
+    {
+        name : "boAt Rockerz 450",
+        rating : 4.8,
+        reviews : 253,
+        price : 1499,
+        mrp : 3990,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/eb8e0fbd-c412-48b3-9c91-5b49ddf35800_600x.png?v=1625045744"
+    },
+
+    {
+        name : "boAt Rockerz 550",
+        rating : 4.8,
+        reviews : 308,
+        price : 1999,
+        mrp : 4990,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/0cfa4417-0213-4b49-b78e-0ae68aeb7057_600x.png?v=1625046144"
+    }
+]
+
+Trending_Wired_productObj = [
+    {
+        name : "boAt BassHeads 100",
+        rating : 4.8,
+        reviews : 386,
+        price : 399,
+        mrp : 990,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/5f7d33ad-39a9-4426-836e-c300814839b9_600x.png?v=1625046105" 
+    },
+
+    {
+        name : "boAt BassHeads 103",
+        rating : 4.8,
+        reviews : 470,
+        price : 369,
+        mrp : 1290,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/553af994-244a-4b81-9d9e-9967a1b966b3_600x.png?v=1625046259" 
+    },
+
+    {
+        name : "boAt BassHeads 102",
+        rating : 4.8,
+        reviews : 150,
+        price : 449,
+        mrp : 1290,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/103_600x.png?v=1574927262" 
+    },
+
+    {
+        name : "boAt BassHeads 242",
+        rating : 4.8,
+        reviews : 330,
+        price : 449,
+        mrp : 1490,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/7d635fe4-8c4c-4c4b-8c00-6065455dc608_600x.png?v=1625046386" 
+    }
+]
+
+Trending_Headphones_productObj = [
+    {
+        name : "boAt Rockerz 333 Pro",
+        rating : 4.9,
+        reviews : 78,
+        price : 1699,
+        mrp : 2990,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/m2_852f9f1f-5498-4e5a-b6a2-0645a7abbc41_600x.png?v=1639153081" 
+    },
+
+    {
+        name : "boAt Rockerz 255 Pro",
+        rating : 4.8,
+        reviews : 368,
+        price : 1399,
+        mrp : 3490,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/1be19528-6d06-4cab-8815-02618b93d3c9_600x.png?v=1625045854" 
+    },
+
+    {
+        name : "TRebel Rockerz 235 V2",
+        rating : 4.8,
+        reviews : 14,
+        price : 1199,
+        mrp : 2990,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/rockerz-235-v2-blue_f69b43bd-1bf3-41f0-a199-837a1eebb711_600x.png?v=1614462143" 
+    },
+
+    {
+        name : "boAt Rockerz 333",
+        rating : 4.9,
+        reviews : 92,
+        price : 1199,
+        mrp : 3990,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_600x.png?v=1641801662" 
+    }
+]
+
+gaming_productObj = [
+    {
+        name : "boAt Immortal 700",
+        rating : 4.9,
+        reviews : 78,
+        price : 2499,
+        mrp : 6990,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_65ff249b-c4f8-4dad-ae88-2aae76723ce2_600x.png?v=1643477993" 
+    },
+
+    {
+        name : "boAt Immortal 1000D",
+        rating : 4.9,
+        reviews : 12,
+        price : 2299,
+        mrp : 5990,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/2_f3aa2756-01f3-4e39-80bc-7b4f6551c7aa_600x.png?v=1625748159" 
+    },
+
+    {
+        name : "boAt Immortal 1300",
+        rating : 4.8,
+        reviews : 8,
+        price : 2899,
+        mrp : 9990,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/IM1300_main_2_600x.png?v=1632715015" 
+    },
+
+    {
+        name : "boAt Immortal 400",
+        rating : 4.5,
+        reviews : 2,
+        price : 1999,
+        mrp : 6990,
+        image : "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main2-700_600x.png?v=1643632679" 
+    }
+]
+
+
+// .........................new object by dikshant..............................................................................................
+
+// <!-- boAt Airdopes 131 - Wireless Earbuds -->
+
+    // boAt_Airdopes_131_Wireless_Earbuds=[ 
+
+     let productDetails=[
         
     
     {
@@ -1732,180 +1404,4 @@
     },
     
 
-     ];
-
-  
-
-  //   set productObj in local storage from index.html itself
-  // Rockerz 
-  let categoryFilter=JSON.parse(localStorage.getItem("categoryFilter"))
-
-  // let categoryDisplay=JSON.parse(localStorage.getItem("categoryDisplay"));
-//  document.querySelector("#categoryIcon").innerText=categoryDisplay;
-//  document.querySelector("#heading").innerText=categoryDisplay;
- 
-  localStorage.setItem("allProduct", JSON.stringify(productObj));
-
-  let rockerzProducts = productObj.filter(function (elem) {
-    // return 
-    // elem.category == categoryFilter;
-    return true;
-  });
-  let select = document.querySelector("select");
-  select.addEventListener("change", sorting);
-  function sorting() {
-    if (select.value == "Alphabetically, A-Z") {
-      rockerzProducts = rockerzProducts.sort(function (a, b) {
-        if (a.name < b.name) return -1;
-        else if (a.name > b.name) return 1;
-        else return 0;
-      });
-      display(rockerzProducts);
-    } else if (select.value == "Alphabetically, Z-A") {
-      rockerzProducts = rockerzProducts.sort(function (b, a) {
-        if (a.name < b.name) return -1;
-        else if (a.name > b.name) return 1;
-        else return 0;
-      });
-      display(rockerzProducts);
-    } else if (select.value == "Price, low to high") {
-      rockerzProducts = rockerzProducts.sort(function (a, b) {
-        if (a.price < b.price) return -1;
-        else if (a.price > b.price) return 1;
-        else return 0;
-      });
-      display(rockerzProducts);
-    } else if (select.value == "Price, high to low") {
-      rockerzProducts = rockerzProducts.sort(function (b, a) {
-        if (a.price < b.price) return -1;
-        else if (a.price > b.price) return 1;
-        else return 0;
-      });
-      display(rockerzProducts);
-    } else {
-      rockerzProducts = productObj.filter(function (elem) {
-        return elem.category == categoryFilter;
-      });
-      display(rockerzProducts);
-    }
-  }
-
-  // console.log(rockerzProducts);
-  let cartimage;
-  let cartprice;
-  let cartname;
-
-  function display(rockerzProducts) {
-    document.querySelector("#productsGrid").innerHTML = "";
-    rockerzProducts.forEach(function (element) {
-      cartimage = element.image;
-      cartprice = element.price;
-      cartname = element.name;
-      let p0 = document.createElement("p");
-      p0.innerText =
-        "YOU SAVE " +
-        Math.floor(eval(((element.mrp - element.price) / element.mrp) * 100)) +
-        " %";
-      p0.style.padding = "5px";
-      p0.style.color = "red";
-      p0.style.fontWeight = "600";
-      p0.style.fontSize = "13px";
-      p0.style.borderTopRightRadius = "7px";
-      p0.style.borderBottomRightRadius = "7px";
-
-      let div1 = document.createElement("div");
-
-      let image = document.createElement("img");
-      image.setAttribute("src", element.image);
-      image.style.cursor = "pointer";
-
-      let div2 = document.createElement("div");
-
-      div2.style.borderRadius = "10px";
-
-      let p1 = document.createElement("p");
-      p1.innerText = element.name;
-      p1.style.cursor = "pointer";
-      p1.style.backgroundColor = "white";
-      p1.style.fontWeight = "700";
-
-      let p2 = document.createElement("p");
-      p2.innerHTML =
-        `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxebTppYZixJIFEyDyKbJH4gARqvUrJsf4G3K07zfR2Q&s" alt=""/>` +
-        " " +
-        element.rating +
-        " | " +
-        element.reviews +
-        "  reviews";
-      p2.style.backgroundColor = "white";
-      p2.style.fontSize = "13px";
-      let hr = document.createElement("hr");
-
-      let p3 = document.createElement("span");
-      p3.innerText = "₹ " + element.price;
-      p3.style.backgroundColor = "white";
-      p3.style.color = "red";
-      p3.style.fontWeight = "900";
-
-      let p4 = document.createElement("span");
-      p4.innerText = " ₹ " + element.mrp;
-
-      p4.style.textDecoration = "line-through";
-
-      let p5 = document.createElement("p");
-      p5.innerText =
-        "You Save ₹" +
-        eval(element.mrp - element.price) +
-        "  (" +
-        Math.floor(eval(((element.mrp - element.price) / element.mrp) * 100)) +
-        " %" +
-        ")";
-      p5.style.backgroundColor = "white";
-      p5.style.fontSize = "13px";
-
-      let addtocart = document.createElement("button");
-      addtocart.innerText = " ADD TO CART";
-      addtocart.addEventListener("click", cartitems);
-      let cartarray = [];
-      function cartitems() {
-        let cartobj = {
-          name: cartname,
-          image: cartimage,
-          price: cartprice,
-          quantity: 1,
-        };
-
-        cartarray.push(cartobj);
-        localStorage.setItem("cartarr", JSON.stringify(cartarray));
-      }
-
-      div2.append(p1, p2, hr, p3, p4, p5, addtocart);
-      div1.append(p0, image, div2);
-      // document.querySelector("#productsgrid").append(div1);
-      div1.style.backgroundColor = "#e3e3e3";
-      image.addEventListener("click", function () {
-        goToItemPage(element);
-      });
-      p1.addEventListener("click", function () {
-        goToItemPage(element);
-      });
-
-      document.querySelector("#productsGrid").append(div1);
-    });
-  }
-
-  display(rockerzProducts);
-
-  //   function display(element) {
-
-  //   }
-
-  // localStorage.clear()
-  function goToItemPage(x) {
-    localStorage.setItem("item", JSON.stringify(x));
-    //  window.location.href="item_page.html"
-    window.location.href = "item_page.html";
-    //  console.log("akash")
-  }
-  // localStorage.clear()
-</script>
+     ]
