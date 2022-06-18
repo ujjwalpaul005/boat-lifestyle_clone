@@ -165,15 +165,14 @@
     <div id="banner">
       <div>
         <a href="index.html">Home /</a>
-        <span id="categoryIcon">product category will be displayed here</span>
+        <span id="categoryIcon"></span>
       </div>
 
-      <img
-        src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Rockerz-_Catgry_web_d201c6e3-e067-4280-a127-56a2e1b51399.jpg?v=1634806683"
-        alt=""
+      <img id="bannerImg"
+         src=""
       />
     </div>
-    <h1 id="heading">product category will be displayed here</h1>
+    <h1 id="heading"></h1>
     <p>
       Sort By
       <select name="" id="sorting">
@@ -187,14 +186,14 @@
       </select>
     </p>
     <div id="productsGrid">
-      <!-- all the products of rockerz category will be appended here -->
+      <!-- all the products of p category will be appended here -->
     </div>
   </body>
 </html>
 <script>
   let productObj = [
     {
-      name: "boAt Rockerz 330",
+      name: "boAt p 330",
       rating: 4.8,
       reviews: 258,
       price: 1499,
@@ -214,7 +213,7 @@
       img4: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1001.png?v=1620883574",
       img5: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/330-pi.png?v=1621574799",
       description:
-        "Let's drench in music and experience every beat differently. Powered with boAt Signature Sound, Rockerz 330 is here to get you grooving to a thumping bass designed only for audiophiles! Keep your charging worries at bay; Rockerz 330 bluetooth earphones offer a dynamic playtime of 30 hours. That's not it! All is takes is 10 minutes of ASAP charge for 10 hours of playtime. This ergonomically designed neckband promises the best of comfort and style. IPX5 protects the Rockerz from sweat and water; so go ahead and make a run to freshen up your mind for these Rockerz don't let anything hold you back. Seamlessly pair two devices at the same time with the dual pairing Bluetooth v5.0. Type C Charging, Single Press Voice Assistant make your audio experience even more enthralling! It's time, LET'S SETTLE for nothing but the best! ",
+        "Let's drench in music and experience every beat differently. Powered with boAt Signature Sound, Rokcerz 330 is here to get you grooving to a thumping bass designed only for audiophiles! Keep your charging worries at bay; Rockerz 330 bluetooth earphones offer a dynamic playtime of 30 hours. That's not it! All is takes is 10 minutes of ASAP charge for 10 hours of playtime. This ergonomically designed neckband promises the best of comfort and style. IPX5 protects the Rockerz from sweat and water; so go ahead and make a run to freshen up your mind for these Rockerz don't let anything hold you back. Seamlessly pair two devices at the same time with the dual pairing Bluetooth v5.0. Type C Charging, Single Press Voice Assistant make your audio experience even more enthralling! It's time, LET'S SETTLE for nothing but the best! ",
     },
 
     {
@@ -1746,66 +1745,71 @@
 
   //   set productObj in local storage from index.html itself
   // Rockerz 
-  let categoryFilter=JSON.parse(localStorage.getItem("categoryFilter"))
+  let cFilter=(localStorage.getItem("categoryFilter"));
+  let blink= (localStorage.getItem("bannerlink"))
+  let bImg= document.querySelector("#bannerImg");
+  bImg.setAttribute("src",blink)
 
-  // let categoryDisplay=JSON.parse(localStorage.getItem("categoryDisplay"));
-//  document.querySelector("#categoryIcon").innerText=categoryDisplay;
-//  document.querySelector("#heading").innerText=categoryDisplay;
+
+  let cDisplay=(localStorage.getItem("categoryDisplay"));
+  console.log(blink,cDisplay,cFilter)
+document.querySelector("#categoryIcon").innerText=cDisplay;
+ document.querySelector("#heading").innerText=cDisplay;
  
   localStorage.setItem("allProduct", JSON.stringify(productObj));
 
-  let rockerzProducts = productObj.filter(function (elem) {
-    // return 
-    // elem.category == categoryFilter;
-    return true;
+  let pProducts = productObj.filter(function (elem) {
+    return  elem.category == cFilter;
+    
+    // return true;
   });
   let select = document.querySelector("select");
   select.addEventListener("change", sorting);
   function sorting() {
     if (select.value == "Alphabetically, A-Z") {
-      rockerzProducts = rockerzProducts.sort(function (a, b) {
+      pProducts = pProducts.sort(function (a, b) {
         if (a.name < b.name) return -1;
         else if (a.name > b.name) return 1;
         else return 0;
       });
-      display(rockerzProducts);
+      display(pProducts);
     } else if (select.value == "Alphabetically, Z-A") {
-      rockerzProducts = rockerzProducts.sort(function (b, a) {
+      pProducts = pProducts.sort(function (b, a) {
         if (a.name < b.name) return -1;
         else if (a.name > b.name) return 1;
         else return 0;
       });
-      display(rockerzProducts);
+      display(pProducts);
     } else if (select.value == "Price, low to high") {
-      rockerzProducts = rockerzProducts.sort(function (a, b) {
+      pProducts = pProducts.sort(function (a, b) {
         if (a.price < b.price) return -1;
         else if (a.price > b.price) return 1;
         else return 0;
       });
-      display(rockerzProducts);
+      display(pProducts);
     } else if (select.value == "Price, high to low") {
-      rockerzProducts = rockerzProducts.sort(function (b, a) {
+      pProducts = pProducts.sort(function (b, a) {
         if (a.price < b.price) return -1;
         else if (a.price > b.price) return 1;
         else return 0;
       });
-      display(rockerzProducts);
+      display(pProducts);
     } else {
-      rockerzProducts = productObj.filter(function (elem) {
-        return elem.category == categoryFilter;
+      pProducts = productObj.filter(function (elem) {
+        return elem.category == cFilter;
       });
-      display(rockerzProducts);
+      display(pProducts);
     }
   }
 
-  // console.log(rockerzProducts);
+  // console.log(pProducts);
   let cartimage;
   let cartprice;
   let cartname;
 
-  function display(rockerzProducts) {
+  function display(pProducts) {
     document.querySelector("#productsGrid").innerHTML = "";
-    rockerzProducts.forEach(function (element) {
+    pProducts.forEach(function (element) {
       cartimage = element.image;
       cartprice = element.price;
       cartname = element.name;
@@ -1902,7 +1906,7 @@
     });
   }
 
-  display(rockerzProducts);
+  display(pProducts);
 
   //   function display(element) {
 
