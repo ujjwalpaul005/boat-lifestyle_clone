@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <title>Boat blog</title>
+
+    <style>
+        * {
+           font-family: 'Montserrat', sans-serif;
+       }
+        h1 {
+            text-align: center;
+        }
+
+        #container {
+            display: flex;
+            height: 450px;
+            width: 100%;
+            justify-content: space-evenly;
+            background-color: #dcdcdc ;
+            border-radius: 8px;
+        }
+        #container>div {
+             height: 50%;
+             border: 1px solid teal;
+             width : 25%;
+             margin: auto;
+             cursor: pointer;
+        }
+
+        #container>div:nth-child(2) {
+
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+
+        #container>div+h1 {
+            font-size: 10px;
+        }
+
+        .image {
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        button {
+            display: block;
+            margin: auto;
+            justify-content: center;
+            padding :20px;
+            margin: auto;
+            margin-top: 20px;
+            border-radius: 8px;
+            border-color: 1px solid red;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            font-weight: 800;
+            border: 0px;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>boAt Blogs</h1>
+    <div id = "container">
+        <div>
+            <img class = "image"  src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Earphone_1296x_540x_25759241-1386-4661-bec0-bad7c111178f_540x.png?v=1650620291" alt="Headphone">
+            <h3>Earphones Buying Guide - Everything You Need To Know </h3>
+        </div>
+        <div>
+            <img class = "image" src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Main-banner_520x500_540x_d7c9944e-0985-498b-9a89-3a54d32c9dd2_520x.png?v=1650620307" alt="Headphone">
+            <h3>The Ultimate Smartwatch Guide - Get The World on The Wrist</h3>
+        </div>
+        <div>
+            <img class = "image" src="https://cdn.shopify.com/s/files/1/0057/8938/4802/articles/blog_600x.jpg?v=1654260672" alt="Headphone">
+            <h3>It is time to Rock The Streets With BoAt Headphones</h3>
+        </div>
+        
+    </div>
+
+    <a href="bloggrid.html"><button>EXPLORE BLOGS</button></a>
+   
+</body>
+</html>
