@@ -1,28 +1,31 @@
 function showLogin() {
-    let box = document.createElement("div");
-    box.setAttribute("id", "showLogIn");
-    let headline = document.createElement("div");
-    let boatHead = document.createElement("h3");
-    boatHead.innerText = "Hey boAthead!";
-  
-    let button = document.createElement("button");
-    button.innerText = "X";
+    let box = document.createElement("div")
+    box.setAttribute("id", "showLogIn")
+    let headline = document.createElement("div")
+    let boatHead = document.createElement("h3")
+    boatHead.innerText = "Hey boAthead!"
+
+    let button = document.createElement("button")
+    button.innerText = "X"
     button.addEventListener("click", deleteOption);
-  
-    let loginbtn = document.createElement("button");
-    loginbtn.innerText = "Log in";
+
+    let loginbtn = document.createElement("button")
+    loginbtn.innerText = "Log in"
     loginbtn.addEventListener("click", function () {
-      window.location.href = "login.html";
-    });
-  
-    headline.append(boatHead, button);
-    box.append(headline, loginbtn);
-    document.querySelector("body").append(box);
-  }
-  
-  function deleteOption() {
+        window.location.href = "login.html";
+    })
+
+    headline.append(boatHead, button)
+    box.append(headline, loginbtn)
+    document.querySelector("body").append(box)
+
+
+}
+
+function deleteOption() {
     document.querySelector("#showLogIn").remove();
-  }
+} 
+
 
 
     
@@ -49,6 +52,7 @@ function showLogin() {
     localStorage.setItem("bannerlink","https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Rockerz-_Catgry_web_d201c6e3-e067-4280-a127-56a2e1b51399.jpg?v=1634806683")
     window.location.href="products.html"
    }) 
+   
 //    3
    let SmartWatches=document.querySelector("#SmartWatches");
    SmartWatches.addEventListener("click",function(){
