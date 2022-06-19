@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
 
+     <!-- favicon ---------------------- -->
+  <link rel="shortcut icon"
+  href="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/32x32_256x256.png_32x32_2d0995d9-ec86-4c14-b928-71101777194c_96x96.png?v=1647426716"
+  type="image/x-icon" />
+
+
+<!-- favicon------------------- -->
+
     <style>
         *{
             margin: 0px;
@@ -77,7 +85,7 @@
             <input type="email" id="email" placeholder="Email">
             <input type="password" id="password" placeholder="Password">
             <button id="signup">CREATE ACCOUNT</button>
-            <p id="login">Already Have An Account? <a href="login.html">Login</a></p> 
+            <p id="login">Already Have An Account? <a href="Signin.html">Login</a></p> 
            
         </form>
     </div>
@@ -99,10 +107,10 @@
         if(checkEmail(data.email)===true){
             userData.push(data)
             localStorage.setItem("userData",JSON.stringify(userData));
-            window.location.href="login.html"
+            window.location.href="Signin.html"
         }else{
             alert("Account Already Exists")
-            window.location.href="login.html"
+            window.location.href="Signin.html"
         }
        
        

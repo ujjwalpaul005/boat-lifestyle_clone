@@ -19,10 +19,11 @@
   <link rel="stylesheet" href="cart.css">
   <link rel="stylesheet" href="navbar.css">
   <link rel="stylesheet" href="footer.css">
-  <title>Document</title>
+  <title>Products | Buy Earbuds, Headphones, Earphones at India’s No.1 Earwear Brand: boAt</title>
   <style>
     body {
       background-color: rgb(37, 37, 37);
+      position: relative;
     }
 
     * {
@@ -320,8 +321,8 @@
         <p>Total :</p>
         <p>Rs. <span id="total_price">0</span></p>
       </div>
-      <button>Continue Shopping ></button>
-      <button>Continue to Payment</button>
+      <button><a href="products.html">Continue Shopping></a></button>
+      <button><a href="payment.html">Continue to Payment</a></button>
     </div>
   </div>
 
@@ -2147,8 +2148,11 @@
       let addtocart = document.createElement("button");
       addtocart.setAttribute("class","cartbutton");
       addtocart.innerText = " ADD TO CART";
-      addtocart.addEventListener("click", cartitems);
-      let cartarray = [];
+      addtocart.addEventListener("click", function(){
+        cartitems();
+        alert("Item added to cart.")
+      });
+      let cartarray = JSON.parse(localStorage.getItem("cart")) || [];
       function cartitems() {
         let cartobj = {
           name: cartname,
@@ -2158,7 +2162,7 @@
         };
 
         cartarray.push(cartobj);
-        localStorage.setItem("cartarr", JSON.stringify(cartarray));
+        localStorage.setItem("cart", JSON.stringify(cartarray));
       }
 
       div2.append(p1, p2, hr, p3, p4, p5, addtocart);
@@ -2191,6 +2195,11 @@
   }
   // localStorage.clear()
 
+
+
+
+
+  
 </script>
 <script src="cart.js"></script>
 <script src="navbar.js"></script>

@@ -64,7 +64,7 @@ document.querySelector("#content").addEventListener("click", function(){
 })
 
 function shopping(){
-  window.location.href = "product.html"
+  window.location.href = "products.html"
 }
 
 function mint(){

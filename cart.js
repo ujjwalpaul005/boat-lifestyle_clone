@@ -99,6 +99,13 @@ function cartFunc() {
 }
 
 
+function shopping(){
+  window.location.href = "products.html"
+}
+
+document.querySelector("#closeCart").addEventListener("click", function(){
+  document.querySelector("#cart").style.display = "none";
+})
 
 document.getElementById("cartOpen").addEventListener("click", function(){
   cartFunc();
@@ -110,6 +117,18 @@ document
   .forEach(function (elem) {
     elem.addEventListener("click", cartFunc);
   });
+
+  document
+  .querySelectorAll(".cards > div > div > button")
+  .forEach(function (elem) {
+    elem.addEventListener("click", cartFunc);
+  });
+
+
+
+  document.getElementById("cartbutton").addEventListener("click", function(){
+    cartFunc()
+  })
 
 
 

@@ -12,7 +12,7 @@ function showLogin() {
     let loginbtn = document.createElement("button")
     loginbtn.innerText = "Log in"
     loginbtn.addEventListener("click", function () {
-        window.location.href = "login.html";
+        window.location.href = "Signin.html";
     })
 
     headline.append(boatHead, button)

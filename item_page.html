@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="cart.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
-    <title>Item Page</title>
+    <title>Item | Buy Earbuds, Headphones, Earphones at India’s No.1 Earwear Brand: boAt</title>
     <style>
       #home{
         background-color: rgb(245, 245, 245);
@@ -276,7 +276,7 @@
       }
       #colourbox > div {
         /* border: 1px solid black; */
-        height: 80px;
+        width: 100%;
         border-radius: 5px;
         background-color: rgb(225,225,225);
       }
@@ -336,7 +336,7 @@
         text-decoration-thickness: 2px;
       }
       #description > img {
-        height: 100%;
+        width: 100%;
         margin-bottom: -37px;
       }
       #description + div {
@@ -452,6 +452,46 @@
     </div>
 
   </div>
+
+  <!-- cart option -----------------  -->
+
+  <div id="cart">
+    <div>
+      <p>Your Cart(Cart)</p>
+      <p style="cursor: pointer;" id="closeCart">x</p>
+    </div>
+
+
+    <div class="ribbon">
+      <p>
+        Free Shipping sitewide | <b>Cash On Delivery</b> available for order value
+        upto <b>₹3000</b>
+      </p>
+
+    </div>
+    <div id="cart_pdt">
+      <!-- <div class="empty">
+          <p>Your cart is empty</p>
+          <button class="empty_btn" onclick="shopping">Start Shopping</button>
+        </div> -->
+
+    </div>
+
+    <div id="total_cart">
+      <div>
+        <p>Shipping :</p>
+        <p>FREE</p>
+      </div>
+      <div>
+        <p>Total :</p>
+        <p>Rs. <span id="total_price">0</span></p>
+      </div>
+      <button><a href="products.html">Continue Shopping></a></button>
+      <button><a href="payment.html">Continue to Payment</a></button>
+    </div>
+  </div>
+
+  <!-- cart option end -----------------  -->
 
     <p id="home"><a href="index.html">Home /</a><span> </span></p>
     <div class="container">
@@ -876,7 +916,7 @@ let productObj= JSON.parse(localStorage.getItem("allProduct"))
 //   add to cart 
 let addtocart=document.querySelector("#cartbutton");
 addtocart.addEventListener("click",cartitems);
-let cartarray=[];
+let cartarray= JSON.parse(localStorage.getItem("cart")) || [];
 function cartitems(){
     let cartobj={
         name:  cartname,
@@ -885,7 +925,7 @@ function cartitems(){
         quantity: +document.querySelector("#qtnRow>div>h2").innerText,
     }
     cartarray.push(cartobj);
-    localStorage.setItem("cartarr", JSON.stringify(cartarray) );
+    localStorage.setItem("cart", JSON.stringify(cartarray) );
 
 
 }
@@ -932,6 +972,11 @@ function cartitems(){
     document.querySelector("#color").innerText=`${obj.color}`
     }
     document.querySelector("#colourbox").append(div);
+
+
+    document.getElementById("cartbutton").addEventListener("click", function(){
+      document.querySelector("#cart").style.display = "block";
+    })
  
 
   });

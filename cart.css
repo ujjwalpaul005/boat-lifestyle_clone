@@ -7,7 +7,6 @@
   color: #000;
   top: 0;
   right: 0;
-  height: 100vw;
   width: 400px;
   box-sizing: border-box;
 }
@@ -70,9 +69,8 @@
 #cart_pdt{
     display: flex;
     flex-direction: column;
-    height: max-content;
     overflow-y: scroll;
-    height: 25%;
+    height: 50%;
 }
 
 #cart_pdt::-webkit-scrollbar {
@@ -128,7 +126,7 @@
   position: absolute;
   left: 0;
   width: 100%;
-  top: 68vh;
+  bottom: 0;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -171,4 +169,20 @@
 
 #total_cart > button:hover{
   text-decoration: underline;
+}
+
+#total_cart > button > a{
+  text-decoration: none;
+  color: #ff0000;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 600;
+}
+#total_cart > button:last-child{
+  color: #fff;
+  background: #ff0000;
+}
+
+#total_cart > button:last-child>a{
+  color: #fff;
 }

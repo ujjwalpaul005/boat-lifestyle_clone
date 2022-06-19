@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment</title>
+
+    <link rel="stylesheet" href="payment.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+
+ <!-- favicon ---------------------- -->
+ <link rel="shortcut icon"
+ href="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/32x32_256x256.png_32x32_2d0995d9-ec86-4c14-b928-71101777194c_96x96.png?v=1647426716"
+ type="image/x-icon" />
+
+
+<!-- favicon------------------- -->
+    <style>
+        #cart_value{
+            text-align: center;
+            color: white;
+        }
+
+        body{
+          background-color: black;
+          font-family: 'Montserrat', sans-serif;
+        }
+
+        h3{
+          margin-top: 20px;
+        }
+    </style>
+
+   
+  </head>
+  <body>
+    <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Boat-Logo_200x_200x_f9c79bf9-9c9a-477d-ab6a-7c889a1f2f70_170x.png?v=1646731229">
+    <h3 id="cart_value"></h3>
+
+    <form>
+      <label for="card">Card Number*</label>
+      <input
+        type="number"
+        name="card"
+        id="card"
+        maxlength="16"
+        oninput="javascript: if(this.value.length > this.maxLength){
+        this.value = this.value.slice(0, this.maxLength);
+        }"
+        placeholder="Enter Your card number here"
+        required
+      />
+
+      <label for="cvv">CVV*</label>
+      <input
+        type="password"
+        name="cvv"
+        id="cvv"
+        maxlength="3"
+        oninput="javascript: if(this.value.length > this.maxLength){
+            this.value = this.value.slice(0, this.maxLength);
+        }"
+        placeholder="Enter your cvv here"
+        required
+      />
+
+      <label for="date">Expiry Date*</label>
+      <input type="month" name="date" id="date" required />
+
+      <label for="name">Full Name on card</label>
+      <input type="text" maxlength="2" id="name" placeholder="Enter your Full Name here" />
+
+      <input type="submit" value="SUBMIT" />
+    </form>
+
+  </body>
+</html>
+
+<script src="payment.js"></script>
