@@ -1,0 +1,60 @@
+
+#blog {
+   font-family: 'Montserrat', sans-serif;
+}
+#blog h1 {
+    text-align: center;
+}
+
+#blog #container {
+    display: flex;
+    height: 450px;
+    width: 100%;
+    justify-content: space-evenly;
+    background-color: #dcdcdc ;
+    border-radius: 8px;
+}
+#blog #container>div {
+     height: 50%;
+     border: 1px solid teal;
+     width : 25%;
+     margin: auto;
+     cursor: pointer;
+}
+
+#blog #container>div:nth-child(2) {
+
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+#blog #container>div+h1 {
+    font-size: 10px;
+}
+
+#blog .image {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#blog button {
+    display: block;
+    margin: auto;
+    justify-content: center;
+    padding :20px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+    border-color: 1px solid red;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    font-weight: 800;
+    border: 0px;
+}
+#blog a {
+    text-decoration: none;
+}
