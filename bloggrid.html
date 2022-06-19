@@ -30,7 +30,7 @@
      }
 
         #blognav {
-            width: 80%;
+            width: 100%;
             height: 60px;   
             display: inline-flex;
             justify-content: space-around;
@@ -48,7 +48,7 @@
          #container {
             width: 80%;
             grid-template-columns: repeat(3 , 1fr);
-            grid-template-rows: repeat(3 , auto);
+            /* grid-template-rows: repeat(3 , auto); */
             display: grid;
             gap: 30px;
             margin: auto;
@@ -69,7 +69,9 @@
         #container>div>p {
             padding: 10px;
             margin-top: 0%;
-            line-height: 25px;
+            line-height: 20px;
+            font-size: 15px;
+
         }
 
         #container>div>h3 {
@@ -80,10 +82,13 @@
         }
 
         #container>div>img {
-            height: 300px;
+            /* height: 300px; */
             width: 100%;
             cursor: pointer;
             border-radius: 5px;
+        }
+        img{
+            width: 100%;
         }
 
     </style>
