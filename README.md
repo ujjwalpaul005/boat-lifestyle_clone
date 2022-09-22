@@ -8,4 +8,4 @@ As a practice project we have created the clone of the website <a href="https://
 
 
 #Live Link
-## Here you can look it live <a href="https://glowing-mandazi-4b14bc.netlify.app/"> https://glowing-mandazi-4b14bc.netlify.app </a>
+## Here you can look it live <a href="https://glowing-mandazi-4b14bc.netlify.app/" target="_blank"> https://glowing-mandazi-4b14bc.netlify.app </a>
