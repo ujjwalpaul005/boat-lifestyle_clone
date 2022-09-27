@@ -14,6 +14,12 @@ As a practice project we have created the clone of the website <a href="https://
 # Landing Page
 https://user-images.githubusercontent.com/101733074/192533731-e4a3e6d1-45a5-4c1d-8b0b-4853c99a0693.mp4
 
+
+# Products Page
+https://user-images.githubusercontent.com/101733074/192535014-b15bce5b-2185-4713-a20b-1a10ee61156e.mp4
+
+
+
 # Live Link
 ## Here you can look it live <a href="https://glowing-mandazi-4b14bc.netlify.app/" target="_blank"> https://glowing-mandazi-4b14bc.netlify.app </a>
 
