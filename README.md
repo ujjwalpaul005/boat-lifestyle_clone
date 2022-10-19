@@ -23,7 +23,7 @@ https://user-images.githubusercontent.com/101733074/192537758-829d1f3e-5f2a-4c4e
 
 
 # Live Link
-## Here you can look it live <a href="https://glowing-mandazi-4b14bc.netlify.app/" target="_blank"> https://glowing-mandazi-4b14bc.netlify.app </a>
+## Here you can look it live <a href="https://melodic-moxie-2fd921.netlify.app" target="_blank"> https://melodic-moxie-2fd921.netlify.app </a>
 
 
 
